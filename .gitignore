@@ -21,3 +21,9 @@
 /yarn-error.log
 
 .byebug_history
+
+# Ignore coffee
+app/assets/javascripts/*.coffee
+
+# Ignore scss
+app/assets/stylesheets/*.scss
