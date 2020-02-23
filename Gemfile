@@ -21,6 +21,10 @@ group :development, :test do
   gem 'hirb-unicode'
   gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'rubocop'
 end
 
 group :development do
@@ -31,7 +35,7 @@ group :development do
 end
 
 group :test do
-  gem 'rails-controller-testing', '1.0.2'
+  # gem 'rails-controller-testing', '1.0.2'
   gem 'minitest',                 '5.10.3'
   gem 'minitest-reporters',       '1.1.14'
   gem 'guard',                    '2.13.0'
