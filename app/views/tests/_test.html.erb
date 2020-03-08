@@ -1,0 +1,9 @@
+<li id="micropost-<%= test.id %>">
+  <%= link_to gravatar_for(test.user, size: 50), test.user %>
+  <span class="user"><%= link_to test.user.name, test.user %></span>
+  <span class="content"><%= test.subject %></span>
+  <span class="content"><%= test.title %></span>
+  <span class="timestamp">
+    Create Test <%= time_ago_in_words(test.created_at) %> ago.
+  </span>
+</li>
