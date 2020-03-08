@@ -7,5 +7,6 @@ class CreateTests < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    add_index :tests, [:user_id, :created_at]
   end
 end

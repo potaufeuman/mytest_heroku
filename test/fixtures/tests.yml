@@ -1,0 +1,14 @@
+# cat:
+#   Subject: "Pet"
+#   title:   "Cat Quiz"
+#   created_at: <%= 2.hours.ago %>
+
+# compliance:
+#   Subject: "コンプライアンス"
+#   title:   "コンプライアンス・意識テスト"
+#   created_at: <%= 3.years.ago %>
+  
+# most_recent:
+#   Subject: "Sample_subject"
+#   title:   "Short test"
+#   created_at: <%= Time.zone.now %>
