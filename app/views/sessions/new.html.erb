@@ -1,6 +1,10 @@
 <% provide(:title, "Top") %>
 <% if logged_in? %>
-  <%= link_to users_path %>
+  <!--redirect_to controller: 'users', action: 'show' %>-->
+  <% provide(:title, @user.name) %>
+  <div class = "row">
+    <%= render "users/side_menu", user: @user %>
+  </div>
 <% else %>
   <h1>Welcome to MyTest!</h1>
   <div class="row">
