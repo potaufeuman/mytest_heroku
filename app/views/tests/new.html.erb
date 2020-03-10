@@ -8,6 +8,10 @@
       <%= f.text_field :subject, class: 'form-control' %>
       <%= f.label :"問題のタイトル" %>
       <%= f.text_field :title, class: 'form-control' %>
+        <%= f.fields_for :questions do |questions_form| %>
+          <%= questions_form.label :問題 %>
+          <%= questions_form.text_field :Q, class: 'form-control'%>
+        <% end %>
       <%= f.submit "Create Test", class: "btn btn-primary" %>
     <% end %>
   </div>

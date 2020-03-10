@@ -16,5 +16,7 @@ Rails.application.routes.draw do
   post '/tester',    to: 'tests#create'
   resources :users
   resources :account_activations, only: [:edit]
-  resources :tests
+  resources :tests do
+    resources :questions
+  end
 end
