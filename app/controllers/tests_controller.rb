@@ -12,6 +12,10 @@ class TestsController < ApplicationController
     @tests = @user.tests.paginate(page: params[:page])
   end
   
+  def new
+    @test = Test.new
+  end
+  
   def create
     @test = current_user.tests.build(test_params)
     if @test.save
