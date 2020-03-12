@@ -5,7 +5,11 @@
   </section>
   <div class = "menu">
     <li><%= link_to "Test", tests_path %></li>
-    <li><%= link_to "Create Test", tester_path %></li>
+    <li>
+      <%= link_to tester_path(:user_id), target: :_blank do %>
+        Create Test
+      <% end %>
+    </li>
     <li>Search</li>
     <li>Grade</li>
     <!--<li>Questionnaire</li>-->

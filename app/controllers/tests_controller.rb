@@ -39,7 +39,7 @@ class TestsController < ApplicationController
   end
   
   private
-    def micropost_params
+    def test_params
       params.require(:test).permit(:subject, :title)
     end
   
