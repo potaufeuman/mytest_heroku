@@ -1,0 +1,11 @@
+<li id="micropost-<%= test.id %>">
+  <span class="content"><%= test.subject %></span>
+  <span class="content">
+    <%= link_to tests_path(:id), target: :_blank do %>
+      <%= test.title %>
+    <% end %>
+  </span>
+  <span class="timestamp">
+    Create Test <%= time_ago_in_words(test.created_at) %> ago.
+  </span>
+</li>

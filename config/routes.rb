@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get  '/tester',    to: 'tests#new'
   post '/tester',    to: 'tests#create'
+  get  '/mytests',   to: 'tests#my_index'
   resources :users
   resources :account_activations, only: [:edit]
   resources :tests do

@@ -1,0 +1,13 @@
+<% provide(:title, "Your Test") %>
+<div class = "row">
+  <%= render "users/side_menu", user: @user %>
+  <div class="col-md-8">
+    <% if @user.tests.any? %>
+      <h3>Your Tests (<%= @user.tests.count %>)</h3>
+      <ol class="microposts">
+        <%= render @mytests, user: @user %>
+      </ol>
+      <!--= will_paginate @mytests %>-->
+    <% end %>
+  </div>
+</div>

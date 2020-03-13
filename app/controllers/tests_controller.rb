@@ -7,6 +7,11 @@ class TestsController < ApplicationController
     @tests = Test.paginate(page: params[:page])
   end
   
+  def my_index
+    @user = current_user
+    @mytests = Test.where(user_id: @user.id)
+  end
+  
   def show
     @user = User.find(params[:user_id])
     @tests = @user.tests.paginate(page: params[:page])

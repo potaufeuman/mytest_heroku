@@ -1,5 +1,7 @@
 class Question < ApplicationRecord
   belongs_to :test
+  has_many :selects
+  # accepts_nested_attributes_for :selects
   validates :test_id, presence: true
   validates :Q, presence: true
 end

@@ -20,6 +20,6 @@ end
 
 users = User.order(:created_at).take(6)
 50.times do
-  title = Faker::Name.title
+  title = Faker::Name.title_my
   users.each { |user| user.tests.create!(title: title) }
 end
