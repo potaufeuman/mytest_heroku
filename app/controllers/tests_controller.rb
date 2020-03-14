@@ -21,8 +21,9 @@ class TestsController < ApplicationController
   
   # テストの受験
   def show
-    @user = User.find(params[:user_id])
-    @tests = @user.tests.paginate(page: params[:page])
+    @user = User.find_by(id: params[:user_id])
+    # @tests = @user.tests.paginate(page: params[:page])
+    @test = Test.find(params[:id])
   end
   
   # def my_show

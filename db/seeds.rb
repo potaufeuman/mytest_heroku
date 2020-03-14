@@ -18,8 +18,16 @@ User.create!(name:  "Example User",
                activated_at: Time.zone.now)
 end
 
-users = User.order(:created_at).take(6)
-50.times do
-  title = Faker::Name.title_my
-  users.each { |user| user.tests.create!(title: title) }
+# https://github.com/faker-ruby/faker/blob/master/doc/books/book.md
+users = User.order(:created_at).take(5)
+10.times do
+  title = Faker::Book.title
+  subject = Faker::Book.genre
+  users.each { |user| user.tests.create!(title: title, subject: subject) }
+end
+
+tests = Test.order(:created_at).take(5)
+10.times do
+  Q = Faker::Lorem.question
+  tests.each { |test| test.questions.create!(Q: Q) }
 end

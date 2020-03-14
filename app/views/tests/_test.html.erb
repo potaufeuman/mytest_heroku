@@ -3,7 +3,7 @@
   <span class="user"><%= link_to test.user.name, test.user %></span>
   <span class="content"><%= test.subject %></span>
   <span class="content">
-    <%= link_to tests_path(:id), target: :_blank do %>
+    <%= link_to test, target: :_blank do %>
       <%= test.title %>
     <% end %>
   </span>
