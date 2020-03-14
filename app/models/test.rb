@@ -1,7 +1,6 @@
 class Test < ApplicationRecord
   belongs_to :user
-  has_many :relatioships, foreign_key: "tested_id",
-                          dependent: :destroy
+  has_many :tested, through: :relationships, source: :tested
   has_many :questions,    dependent: :destroy
   # accepts_nested_attributes_for :questions
   default_scope -> { order(created_at: :desc) } #新しいテスト順に並べ替え

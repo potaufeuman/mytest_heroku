@@ -1,11 +1,14 @@
 <li id="micropost-<%= test.id %>">
   <span class="content"><%= test.subject %></span>
   <span class="content">
-    <%= link_to mytests_path(:id), target: :_blank do %>
+    <%= link_to test, target: :_blank do %>
       <%= test.title %>
     <% end %>
-    edit
-    delete
+    <% if current_user?(test.user) %>
+      edit
+      <%= link_to "delete", test, method: :delete,
+                                  data: { confirm: "You sure?"} %>
+    <% end %>
   </span>
   <span class="timestamp">
     Create Test <%= time_ago_in_words(test.created_at) %> ago.

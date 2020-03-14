@@ -25,11 +25,6 @@ class TestsController < ApplicationController
     # @tests = @user.tests.paginate(page: params[:page])
     @test = Test.find(params[:id])
   end
-  
-  # def my_show
-  #   @user = current_user
-  #   @mytest = Test.find(params[:id])
-  # end
     
   def new
     @test = Test.new
@@ -54,7 +49,9 @@ class TestsController < ApplicationController
   end
 
   def destroy
-    
+    @test.destroy
+    flash[:seccess] = "Test deleted"
+    redirect_to request.referrer || root_url
   end
   
   private
@@ -63,7 +60,7 @@ class TestsController < ApplicationController
     end
   
     def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless current_user?(@user)
+      @test = current_user.tests.find_by(id: params[:id])
+      redirect_to(root_url) if @test.nil?
     end
 end
