@@ -4,6 +4,7 @@
   <div class="col-md-8">
     <% if @user.tests.any? %>
       <h3>Tests (<%= @user.tests.count %>)</h3>
+      <%= will_paginate @tests %>
       <ol class="microposts">
         <%= render @tests  %>
       </ol>

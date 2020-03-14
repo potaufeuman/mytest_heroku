@@ -1,0 +1,20 @@
+<% provide(:title, 'Test Content') %>
+<h1><%= yield(:title) %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@mytest, locale: true) do |f| %>
+      カテゴリ
+      <%= @mytest.subject %>
+      問題のタイトル
+      <%= @mytest.title %>
+      問題
+      <%= @mytest.questions(1).Q %>
+      <%= f.fields_for :selects do |selects_form| %>
+        <%= selects_form.label :選択肢 %>
+        <div class="radio_btn"><%= selects_form.radio_button :judge, :'1.' %></div>
+        <div class="quiz"><%= selects_form.text_area :content %></div>
+      <% end %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

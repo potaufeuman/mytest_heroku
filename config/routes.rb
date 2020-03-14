@@ -11,10 +11,11 @@ Rails.application.routes.draw do
   post '/signup',  to: 'users#create'
   # get    '/login',   to: 'sessions#new'
   # post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
-  get  '/tester',    to: 'tests#new'
-  post '/tester',    to: 'tests#create'
-  get  '/mytests',   to: 'tests#my_index'
+  delete '/logout',    to: 'sessions#destroy'
+  get  '/tester',      to: 'tests#new'
+  post '/tester',      to: 'tests#create'
+  get  '/mytests',     to: 'tests#my_index'
+  get  '/mytests/:id', to: 'tests#my_show'
   resources :users
   resources :account_activations, only: [:edit]
   resources :tests do

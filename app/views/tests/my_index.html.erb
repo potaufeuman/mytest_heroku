@@ -4,10 +4,13 @@
   <div class="col-md-8">
     <% if @user.tests.any? %>
       <h3>Your Tests (<%= @user.tests.count %>)</h3>
+      <%= will_paginate @mytests %>
       <ol class="microposts">
-        <%= render @mytests, user: @user %>
+      <% @mytests.each do |mytest| %>
+        <%= render 'mytest',test: mytest %>
+      <% end %>
       </ol>
-      <!--= will_paginate @mytests %>-->
+      <%= will_paginate @mytests %>
     <% end %>
   </div>
 </div>

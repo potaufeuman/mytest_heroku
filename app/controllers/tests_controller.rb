@@ -7,16 +7,29 @@ class TestsController < ApplicationController
     @tests = Test.paginate(page: params[:page])
   end
   
+  # 自分が作ったテストの一覧
   def my_index
     @user = current_user
-    @mytests = Test.where(user_id: @user.id)
+    @mytests = Test.where(user_id: @user.id).paginate(page: params[:page])
   end
   
+  # # 他人が作ったテストの一覧 → users#show でOK
+  # def another_index
+  #   @user = User.find(params[:user_id])
+  #   @tests = @user.tests.paginate(page: params[:page])
+  # end
+  
+  # テストの受験
   def show
     @user = User.find(params[:user_id])
     @tests = @user.tests.paginate(page: params[:page])
   end
   
+  # def my_show
+  #   @user = current_user
+  #   @mytest = Test.find(params[:id])
+  # end
+    
   def new
     @test = Test.new
   end
