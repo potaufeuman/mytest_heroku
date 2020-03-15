@@ -27,7 +27,9 @@ class TestsController < ApplicationController
   end
     
   def new
+    @user = current_user
     @test = Test.new
+    @mytests = Test.where(user_id: @user.id).paginate(page: params[:page])
   end
   
   def create

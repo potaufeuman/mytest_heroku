@@ -1,27 +1,17 @@
 <% provide(:title, 'Create Test') %>
 <h1><%= yield(:title) %></h1>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@test, locale: true) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :"カテゴリ" %>
-      <%= f.text_field :subject, class: 'form-control' %>
-      <%= f.label :"問題のタイトル" %>
-      <%= f.text_field :title, class: 'form-control' %>
-        <%= f.fields_for :questions do |questions_form| %>
-          <%= questions_form.label :問題 %>
-          <%= questions_form.text_area :Q, class: 'form-control', size: "30x6"%>
-          <%= f.fields_for :selects do |selects_form| %>
-            <%= selects_form.label :選択肢 %>
-            <div class="radio_btn"><%= selects_form.radio_button :judge, :'1.' %></div>
-            <div class="quiz"><%= selects_form.text_area :content %></div>
-            <div class="radio_btn"><%= selects_form.radio_button :judge, :'2.' %></div>
-            <div class="quiz"><%= selects_form.text_area :content %></div>
-            <div class="radio_btn"><%= selects_form.radio_button :judge, :'3.' %></div>
-            <div class="quiz"><%= selects_form.text_area :content %></div>
-          <% end %>
-        <% end %>
-      <%= f.submit "Create Test", class: "btn btn-primary" %>
+  <%= render 'create_test', user: @user, test: @test %>
+  <div class="col-md-8">
+    <% if @user.tests.any? %>
+      <h3>Your Created Tests (<%= @user.tests.count %>)</h3>
+      <%= will_paginate @mytests %>
+      <ol class="microposts">
+      <% @mytests.each do |mytest| %>
+        <%= render 'mytest',test: mytest %>
+      <% end %>
+      </ol>
+      <%= will_paginate @mytests %>
     <% end %>
   </div>
 </div>

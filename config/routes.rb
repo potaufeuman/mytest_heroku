@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'questions/new'
+
+  get 'questions/edit'
+
+  get 'questions/destroy'
+
   root "sessions#new"
   get  '/',        to: 'sessions#new'
   post '/',        to: 'sessions#create'
@@ -16,6 +22,8 @@ Rails.application.routes.draw do
   post '/tester',      to: 'tests#create'
   get  '/mytests',     to: 'tests#my_index'
   get  '/mytests/:id', to: 'tests#my_show'
+  get  '/questioner',  to: 'questions#new'
+  post '/questioner',  to: 'questions#create'
   resources :users
   resources :account_activations, only: [:edit]
   resources :tests do

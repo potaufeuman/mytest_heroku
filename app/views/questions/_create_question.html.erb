@@ -1,0 +1,22 @@
+<aside class = "col-md-4">
+  <section = "user_info">
+    <%= gravatar_for user, size: 50 %>
+    <%= user.name %>
+  </section>
+  <div class = "menu">
+    <%= form_for question, url:questioner_path do |q_form| %>
+      <%= q_form.label :問題 %>
+      <%= q_form.text_area :Q, class: 'form-control', size: "30x6"%>
+      <%= q_form.fields_for :selects do |selects_form| %>
+        <%= selects_form.label :選択肢 %>
+        <div class="radio_btn"><%= selects_form.radio_button :judge, :'1.' %></div>
+        <div class="quiz"><%= selects_form.text_area :content %></div>
+        <div class="radio_btn"><%= selects_form.radio_button :judge, :'2.' %></div>
+        <div class="quiz"><%= selects_form.text_area :content %></div>
+        <div class="radio_btn"><%= selects_form.radio_button :judge, :'3.' %></div>
+        <div class="quiz"><%= selects_form.text_area :content %></div>
+      <% end %>
+      <%= q_form.submit "Create Question", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</aside>
