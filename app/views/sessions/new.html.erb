@@ -6,9 +6,21 @@
     <%= render "users/side_menu", user: @user %>
   </div>
 <% else %>
-  <h1>Welcome to MyTest!</h1>
+  <div class="center"><h1>Welcome to MyTest!</h1></div>
   <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <aside class="col-md-6">
+      このサイトは、チームで知識の共有ができているか互いにチェックし合うために使うことを目的に作りました。<br>
+      ユーザーは、簡単な選択式の問題を作り、仲間とテストを受講し合って知識の共有度合いを測ることができます。<br>
+      <br>
+      仕事の研修の定着度合いを測る、<br>
+      学校の友達と簡単なテストを出し合う、<br>
+      イベントで連絡事項の理解度合いを測る、<br>
+      雑学のテストを友達と出し合う、<br>
+      <br>
+      「テスト」といっても怖がる必要はありません。<br>
+      楽しみましょう！<br>
+    </aside>
+    <div class="col-md-6">
       <%= form_for(:session, url: root_path) do |f| %>
         <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>

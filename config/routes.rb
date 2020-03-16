@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'questions/new'
-
-  get 'questions/edit'
-
-  get 'questions/destroy'
-
   root "sessions#new"
   get  '/',        to: 'sessions#new'
   post '/',        to: 'sessions#create'

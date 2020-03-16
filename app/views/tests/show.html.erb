@@ -6,12 +6,14 @@
       <h3>カテゴリ：<%= @test.subject %></h3>
       <h3>タイトル：<%= @test.title %></h3>
       <% @test.questions.each_with_index do |question, i| %>
-        <h3>問題（<%= i+1 %>）</h3>
-        <h3><%= question.Q %></h3>
+        <li>問題（<%= i+1 %>）</li>
+        <%= question.Q %></li>
         <%= f.fields_for :answers do |answers_form| %>
-          <%= answers_form.label :選択肢 %>
-          <div class="radio_btn"><%= answers_form.radio_button :judge, :'1.' %></div>
-          <div class="quiz"><%= answers_form.text_area :content %></div>
+          <p><%= answers_form.label :選択肢 %></p>
+          <% question.selects.each_with_index do |select, ia| %>
+            <div class="radio_btn"><%= answers_form.radio_button :select_A, :ia %></div>
+            <li><%= select.content %></li>
+          <% end %>
         <% end %>
       <% end %>
       <%= f.submit "Submit", class: "btn btn-primary" %>

@@ -13,12 +13,6 @@ class TestsController < ApplicationController
     @mytests = Test.where(user_id: @user.id).paginate(page: params[:page])
   end
   
-  # # 他人が作ったテストの一覧 → users#show でOK
-  # def another_index
-  #   @user = User.find(params[:user_id])
-  #   @tests = @user.tests.paginate(page: params[:page])
-  # end
-  
   # テストの受験
   def show
     @user = User.find_by(id: params[:user_id])
@@ -36,9 +30,9 @@ class TestsController < ApplicationController
     @test = current_user.tests.build(test_params)
     if @test.save
       flash[:success] = "Test created!"
-      redirect_to root_url
+      redirect_to mytests_path
     else
-      render root_url
+      render mytests_path
     end
   end
   

@@ -5,7 +5,9 @@
       <%= test.title %>
     <% end %>
     <% if current_user?(test.user) %>
-      <%= link_to "question", new_test_question_path(:test_id) %>
+      <%= link_to new_test_question_path(:test_id), target: :_blank do %>
+        question
+      <% end %>
       edit
       <%= link_to "delete", test, method: :delete,
                                   data: { confirm: "You sure?"} %>

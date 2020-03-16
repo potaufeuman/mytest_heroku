@@ -2,14 +2,22 @@
 <h1><%= yield(:title) %></h1>
 <div class="row">
   <%= render 'create_question', user: @user, question: @question %>
-  <div class="col-md-8">
-    <% if @user.tests.any? %>
-      <h3>カテゴリ：<%= @test.subject %></h3>
-      <h3>タイトル：<%= @test.title %></h3>
+  <% if @user.tests.any? %>
+    <div class = "menu">
+      <div class="col-md-8">
+        <h3>カテゴリ：<%= @test.subject %></h3>
+        <h3>タイトル：<%= @test.title %></h3>
+      </div>
       <% @test.questions.each_with_index do |question, i| %>
-        <h3>問題（<%= i+1 %>）</h3>
-        <h3><%= question.Q %></h3>
+        <div class="col-md-6">
+          <li>問題（<%= i+1 %>）</li>
+          <h4><%= question.Q %></h4>
+        </div>
+        <div class="col-md-2">
+          <%= link_to "delete", test_question_path(@test,question),
+              method: :delete,  data: { confirm: "You sure?" } %>
+        </div>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

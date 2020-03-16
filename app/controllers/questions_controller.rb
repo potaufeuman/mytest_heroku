@@ -3,6 +3,7 @@ before_action :logged_in_user, only: [:create, :edit, :update]
   
   def new
     @user = current_user
+    # @test = Test.find_by(id: params[:test_id])
     @test = Test.find_by(test_id = test_id)
     @question = Question.new
   end
@@ -12,9 +13,11 @@ before_action :logged_in_user, only: [:create, :edit, :update]
     @quesiton = @test.questions.build(question_params)
     if @quesiton.save
       flash[:success] = "Question created!"
-      redirect_to mytests_path
+      redirect_to request.referrer || mytests_path
+      # redirect_to mytests_path
     else
-      render mytests_path
+      redirect_to request.referrer || mytests_path
+      # render mytests_path
     end
   end
 
@@ -22,6 +25,10 @@ before_action :logged_in_user, only: [:create, :edit, :update]
   end
 
   def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+    flash[:seccess] = "Test deleted"
+    redirect_to request.referrer || mytests_path
   end
   
   private
