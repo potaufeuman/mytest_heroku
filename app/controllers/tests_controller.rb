@@ -37,11 +37,18 @@ class TestsController < ApplicationController
   end
   
   def edit
-    
+    @user = current_user
+    @test = Test.find(params[:id])
   end
   
   def update
-    
+    @test = Test.find(params[:id])
+    if @test.update_attributes(test_params)
+      flash[:success] = "Test updated"
+      redirect_to mytests_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -52,7 +59,7 @@ class TestsController < ApplicationController
   
   private
     def test_params
-      params.require(:test).permit(:subject, :title)
+      params.require(:test).permit(:subject, :title, :tested_id, :user_id)
     end
   
     def correct_user

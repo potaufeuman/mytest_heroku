@@ -9,18 +9,18 @@ Rails.application.routes.draw do
   get  '/language',to: 'static_pages#language'
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
-  # get    '/login',   to: 'sessions#new'
-  # post   '/login',   to: 'sessions#create'
   delete '/logout',    to: 'sessions#destroy'
   get  '/tester',      to: 'tests#new'
   post '/tester',      to: 'tests#create'
   get  '/mytests',     to: 'tests#my_index'
   get  '/mytests/:id', to: 'tests#my_show'
-  get  '/questioner',  to: 'questions#new'
-  post '/questioner',  to: 'questions#create'
+  # get  '/questioner',  to: 'questions#new'
+  # post '/questioner',  to: 'questions#create'
   resources :users
   resources :account_activations, only: [:edit]
   resources :tests do
-    resources :questions
+    resources :questions do
+      resources :selects, only: [:new, :create, :edit, :destroy]
+    end
   end
 end

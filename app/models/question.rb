@@ -1,8 +1,8 @@
 class Question < ApplicationRecord
-  belongs_to :test, foreign_key: "test_id"
-  has_many :selects
-  # accepts_nested_attributes_for :selects
-  has_many :answers
+  belongs_to :test
+  has_many :selects, dependent: :destroy
+  accepts_nested_attributes_for :selects, allow_destroy: true
+  has_many :answers, dependent: :destroy
   validates :test_id, presence: true
   validates :Q, presence: true
 end

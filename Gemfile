@@ -25,6 +25,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'rubocop'
+  gem 'bullet'
 end
 
 group :development do

@@ -1,14 +1,12 @@
 <% provide(:title, 'Create Question') %>
 <h1><%= yield(:title) %></h1>
 <div class="row">
-  <%= render 'create_question', user: @user, test: @test, question: @question %>
+  <%= render 'create_select', user: @user, test: @test, question: @question, select: @select %>
   <% if @user.tests.any? %>
     <div class = "menu">
       <div class="col-md-8">
-        <div align="center">
-          <h3>カテゴリ：<%= @test.subject %></h3>
-          <h3>タイトル：<%= @test.title %></h3>
-        </div>
+        <div class="center"><h4>カテゴリ：<%= @test.subject %></h4></div>
+        <div class="center"><h4>タイトル：<%= @test.title %></h4></div>
         <% @test.questions.each_with_index do |question, i| %>
           <li>問題（<%= i+1 %>）</li>
           <h4><%= question.Q %></h4>
@@ -17,11 +15,17 @@
                 method: :delete,  data: { confirm: "You sure?" } %>
           </div>
           <% question.selects.each_with_index do |select, ia| %>
-            <li>選択肢（<%= ia+1%>）</li>
-            <%= select.content %>
+            <%= form_for select, url:{ action: :create } do |f| %>
+              <%= f.label :選択肢 %>（<%= ia+1%>）
+              <%= select.judge %>
+              <%= select.content %>
+              <!--= f.submit "Create Select", class: "btn btn-primary" %>-->
+            <% end %>
           <% end %>
           <div align="right">
             <%= link_to "create selects", new_test_question_select_path(@test,question) %>
+            <!--= link_to "delete", test_question_select_path(params[:test_id]),-->
+            <!--                      method: :delete, data: { confirm: "You sure?"} %>-->
           </div>
         <% end %>
       </div>
