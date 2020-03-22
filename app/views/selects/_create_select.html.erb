@@ -8,12 +8,10 @@
       <li>カテゴリ：<%= test.subject %></li>
       <li>タイトル：<%= test.title %></li>
       <h5>問題：</h5>
-      <!--= question.Q %>-->
-      <div>
-        <%= f.label :選択肢 %>
-        <div class="radio_btn"><%= f.radio_button :judge, :"0" %></div>
-        <div class="quiz"><%= f.text_area :content %></div>
-      </div>
+      <%= question.Q %>
+      <%= f.text_area :content %>
+        <div class= "checkbox"><%= f.check_box :judge %></div>
+        <div class= "right">正解なら、チェックを入れてください</div>
       <%= f.submit "Create Select", class: "btn btn-primary" %>
     <% end %>
   </div>

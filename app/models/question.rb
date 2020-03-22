@@ -3,6 +3,7 @@ class Question < ApplicationRecord
   has_many :selects, dependent: :destroy
   accepts_nested_attributes_for :selects, allow_destroy: true
   has_many :answers, dependent: :destroy
+  accepts_nested_attributes_for :answers, allow_destroy: true
   validates :test_id, presence: true
   validates :Q, presence: true
 end

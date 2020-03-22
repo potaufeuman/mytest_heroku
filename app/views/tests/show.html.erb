@@ -1,22 +1,16 @@
-<% provide(:title, 'Test Content') %>
+<% provide(:title, 'Take a test') %>
 <h1><%= yield(:title) %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@test, locale: true) do |f| %>
-      <h3>カテゴリ：<%= @test.subject %></h3>
-      <h3>タイトル：<%= @test.title %></h3>
-      <% @test.questions.each_with_index do |question, i| %>
-        <li>問題（<%= i+1 %>）</li>
-        <%= question.Q %></li>
-        <%= f.fields_for :answers do |answers_form| %>
-          <p><%= answers_form.label :選択肢 %></p>
-          <% question.selects.each_with_index do |select, ia| %>
-            <div class="radio_btn"><%= answers_form.radio_button :select_A, :ia %></div>
-            <li><%= select.content %></li>
-          <% end %>
-        <% end %>
+    <h3>カテゴリ：<%= @test.subject %></h3>
+    <h3>タイトル：<%= @test.title %></h3>
+    <% if @test.questions.any? %>
+      <% question = @test.questions.first %>
+      <%= link_to new_test_question_answer_path(@test, question) do  %>
+        <div class="btn btn-primary", "center">Getting started</div>
       <% end %>
-      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% else %>
+      <div class="center">※問題を作成中です。</div>
     <% end %>
   </div>
 </div>

@@ -3,32 +3,35 @@
 <div class="row">
   <%= render 'create_select', user: @user, test: @test, question: @question, select: @select %>
   <% if @user.tests.any? %>
-    <div class = "menu">
-      <div class="col-md-8">
-        <div class="center"><h4>カテゴリ：<%= @test.subject %></h4></div>
-        <div class="center"><h4>タイトル：<%= @test.title %></h4></div>
-        <% @test.questions.each_with_index do |question, i| %>
+    <div class="col-md-8">
+      <div class="center"><h4>カテゴリ：<%= @test.subject %></h4></div>
+      <div class="center"><h4>タイトル：<%= @test.title %></h4></div>
+      <% @test.questions.each_with_index do |question, i| %>
+        <div class="microposts">
           <li>問題（<%= i+1 %>）</li>
           <h4><%= question.Q %></h4>
-          <div align="right">
-            <%= link_to "delete test", test_question_path(@test,question),
-                method: :delete,  data: { confirm: "You sure?" } %>
-          </div>
-          <% question.selects.each_with_index do |select, ia| %>
-            <%= form_for select, url:{ action: :create } do |f| %>
-              <%= f.label :選択肢 %>（<%= ia+1%>）
-              <%= select.judge %>
-              <%= select.content %>
-              <!--= f.submit "Create Select", class: "btn btn-primary" %>-->
-            <% end %>
-          <% end %>
-          <div align="right">
-            <%= link_to "create selects", new_test_question_select_path(@test,question) %>
-            <!--= link_to "delete", test_question_select_path(params[:test_id]),-->
-            <!--                      method: :delete, data: { confirm: "You sure?"} %>-->
+        </div>
+        <div align="right">
+          <%= link_to "delete question", test_question_path(@test,question),
+              method: :delete,  data: { confirm: "You sure?" } %>
+        </div>
+        <% question.selects.each_with_index do |select, ia| %>
+          <div class="quiz">
+            選択肢（<%= ia+1%>）
+            <%= select.judge == 1 ? "正解：" : "不正解：" %>
+            <%= select.content %>
           </div>
         <% end %>
-      </div>
+        <div align="right">
+          <%= link_to "create select", new_test_question_select_path(@test, question) %>
+          <!--= link_to "create select", edit_test_question_select_path(@test, question) %>-->
+          <!--= link_to "delete select", test_question_select_path(@test, question, select),-->
+          <!--                      method: :delete, data: { confirm: "You sure?"} %>-->
+        </div>
+      <% end %>
+      <%= link_to new_test_question_path(@test) do %>
+        <div class="btn btn-primary", "center">Add Question</div>
+      <% end %>
     </div>
   <% end %>
 </div>

@@ -160,15 +160,26 @@ input {
 }
 
 .radio_btn{
-  width: 10px;
-  // text-align:left;
+  // width: 10px;
+  float: left;
+  margin-right: 50px;
 }
 
 .quiz{
-  // margin-top: 10px;
-  // margin-bottom: 10px;
-  margin-left: 50px;
-  // text-align:right;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.checkbox{
+  width: 20px;
+  float: left;
+  margin-left: 20px;
+}
+
+.right{
+  float: right;
+  margin-right: 50px;
+  margin-bottom: 10px;
 }
 
 #session_remember_me {

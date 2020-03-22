@@ -14,10 +14,8 @@ class QuestionsController < ApplicationController
     if @question.save
       flash[:success] = "Question created!"
       redirect_to request.referrer || mytests_path
-      # redirect_to mytests_path
     else
       redirect_to request.referrer || mytests_path
-      # render mytests_path
     end
   end
 
@@ -33,6 +31,8 @@ class QuestionsController < ApplicationController
   
   private
     def question_params
-      params.require(:question).permit(:test_id, :Q, :correct_A, :point, selects_attributes: [:id, :judge, :content])
+      params.require(:question).permit(:test_id, :Q, :correct_A, :point,
+                      selects_attributes: [:id, :judge, :content],
+                      answers_attributes: [:test_id, :tested_id, :select_A])
     end
 end

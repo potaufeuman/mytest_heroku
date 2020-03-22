@@ -16,8 +16,8 @@ class TestsController < ApplicationController
   # テストの受験
   def show
     @user = User.find_by(id: params[:user_id])
-    # @tests = @user.tests.paginate(page: params[:page])
     @test = Test.find(params[:id])
+    @answer = Answer.new
   end
     
   def new
@@ -59,7 +59,8 @@ class TestsController < ApplicationController
   
   private
     def test_params
-      params.require(:test).permit(:subject, :title, :tested_id, :user_id)
+      params.require(:test).permit(:subject, :title, :tested_id, :user_id,
+                                    questions_attributes: [:test_id, :Q, :correct_A, :select_id])
     end
   
     def correct_user

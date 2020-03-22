@@ -14,13 +14,11 @@ Rails.application.routes.draw do
   post '/tester',      to: 'tests#create'
   get  '/mytests',     to: 'tests#my_index'
   get  '/mytests/:id', to: 'tests#my_show'
-  # get  '/questioner',  to: 'questions#new'
-  # post '/questioner',  to: 'questions#create'
   resources :users
   resources :account_activations, only: [:edit]
   resources :tests do
     resources :questions do
-      resources :selects, only: [:new, :create, :edit, :destroy]
+      resources :selects, :answers, only: [:new, :create, :edit, :destroy]
     end
   end
 end

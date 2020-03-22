@@ -12,8 +12,12 @@ class SelectsController < ApplicationController
     @test = Test.find(params[:test_id])
     @question = @test.questions.find(params[:question_id])
     @select = @question.selects.build(select_params)
-    @select.save
-    redirect_to request.referrer || mytests_path
+    if @select.save
+      flash[:success] = "Select created!"
+      redirect_to request.referrer || mytests_path
+    else
+      redirect_to request.referrer || mytests_path
+    end
   end
   
   def edit

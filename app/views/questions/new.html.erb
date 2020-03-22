@@ -10,14 +10,17 @@
           <h3>タイトル：<%= @test.title %></h3>
         </div>
         <% @test.questions.each_with_index do |question, i| %>
-          <li>問題（<%= i+1 %>）</li>
-          <h4><%= question.Q %></h4>
+          <div class="microposts">
+            <li>問題（<%= i+1 %>）</li>
+            <h4><%= question.Q %></h4>
+          </div>
           <div align="right">
             <%= link_to "delete test", test_question_path(@test,question),
                 method: :delete,  data: { confirm: "You sure?" } %>
           </div>
           <% question.selects.each_with_index do |select, ia| %>
             <li>選択肢（<%= ia+1%>）</li>
+            <%= select.judge == 1 ? "正解：" : "不正解：" %>
             <%= select.content %>
           <% end %>
           <div align="right">

@@ -4,22 +4,9 @@
     <%= user.name %>
   </section>
   <div class = "menu">
-    <!--= form_for question, url:test_questions_path(test.id) do |f| %>-->
     <%= form_for(question, url: { action: :create }) do |f| %>
       <%= f.label :問題 %>
       <%= f.text_area :Q, class: 'form-control', size: "30x6" %>
-      <!--= field_set_tag '選択肢' do %>-->
-      <!--  = f.fields_for :selects, question.selects.build do |selects_form| %>-->
-      <!--  = fields_for question.selects, question.selects.build do |selects_form| %>-->
-      <!--    = selects_form.label :選択肢 %>-->
-      <!--    <div class="radio_btn">= selects_form.radio_button :judge, :"1" %></div>-->
-      <!--    <div class="quiz">= selects_form.text_area :content %></div>-->
-      <!--    <div class="radio_btn">= selects_form.radio_button :judge, :"0" %></div>-->
-      <!--    <div class="quiz">= selects_form.text_area :content %></div>-->
-      <!--    <div class="radio_btn">= selects_form.radio_button :judge, :"0" %></div>-->
-      <!--    <div class="quiz">= selects_form.text_area :content %></div>-->
-      <!--   end %>-->
-      <!-- end %>-->
       <%= f.submit "Create Question", class: "btn btn-primary" %>
     <% end %>
   </div>
