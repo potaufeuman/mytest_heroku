@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :logged_in_user, only: [:create, :edit, :update, :destroy]
+  include QuestionsHelper
   
   def new
     @user = current_user
@@ -29,10 +30,47 @@ class QuestionsController < ApplicationController
     redirect_to request.referrer || mytests_path
   end
   
+  def answerring
+    @user = current_user
+    @test = Test.find(params[:test_id])
+    @question = @test.questions.find(params[:id])
+    answer_selects(@question)
+    now_answer(@test)  # 回答すると、次の質問にジャンプする。AnswersHelper参照。
+    @answers = []
+    (@ia+1).times do
+      @answer = Answer.new
+      @answers = @answers.push(@answer)
+    end
+  end
+  
+  def post_answerring
+    @user = current_user
+    @test = Test.find(params[:test_id])
+    @question = @test.questions.find(params[:id])
+    @answer = @question.answers.build(answer_params)
+    answer_selects(@question)
+    now_answer(@test)  # 回答すると、次の質問にジャンプする。AnswersHelper参照。
+    if @answer.save
+      if @next_question == nil
+        tested_id = @user.id
+        redirect_to tested_test_answers_path(tested_id, @test.id)  # 採点ページにジャンプする。
+      else
+        redirect_to new_test_question_answer_path(@test, @next_question.id)
+      end
+    else
+      redirect_to request.referrer || mytests_path
+    end
+  end
+  
   private
     def question_params
       params.require(:question).permit(:test_id, :Q, :correct_A, :point,
                       selects_attributes: [:id, :judge, :content],
-                      answers_attributes: [:test_id, :tested_id, :select_A])
+                      answers_attributes: [:test_id, :tested_id, :select_A, :select_id])
+    end
+    
+    def answer_params
+      params.require(:answer).permit(:test_id, :tested_id, :select_A, :select_id)
+      params.permit(:test_id, :Q, :correct_A, :point)
     end
 end

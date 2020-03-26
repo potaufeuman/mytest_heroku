@@ -18,7 +18,16 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :tests do
     resources :questions do
+      member do
+        get :answerring
+        post :post_answerring
+      end
       resources :selects, :answers, only: [:new, :create, :edit, :destroy]
+    end
+  end
+  resources :testeds do
+    resources :tests do
+      resources :answers, only: [:index, :show]
     end
   end
 end

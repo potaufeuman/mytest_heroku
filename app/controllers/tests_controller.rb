@@ -17,6 +17,7 @@ class TestsController < ApplicationController
   def show
     @user = User.find_by(id: params[:user_id])
     @test = Test.find(params[:id])
+    @first_question = @test.questions.first
     @answer = Answer.new
   end
     

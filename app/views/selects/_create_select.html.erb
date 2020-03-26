@@ -10,7 +10,7 @@
       <h5>問題：</h5>
       <%= question.Q %>
       <%= f.text_area :content %>
-        <div class= "checkbox"><%= f.check_box :judge %></div>
+        <div class= "sidemenu_box"><%= f.check_box :judge %></div>
         <div class= "right">正解なら、チェックを入れてください</div>
       <%= f.submit "Create Select", class: "btn btn-primary" %>
     <% end %>

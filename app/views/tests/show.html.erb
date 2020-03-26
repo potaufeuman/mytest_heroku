@@ -4,10 +4,9 @@
   <div class="col-md-6 col-md-offset-3">
     <h3>カテゴリ：<%= @test.subject %></h3>
     <h3>タイトル：<%= @test.title %></h3>
-    <% if @test.questions.any? %>
-      <% question = @test.questions.first %>
-      <%= link_to new_test_question_answer_path(@test, question) do  %>
-        <div class="btn btn-primary", "center">Getting started</div>
+    <% if @test.questions.any? && @first_question.selects.any? %>
+      <%= link_to answerring_test_question_path(@test, @first_question) do  %>
+        <div class="btn btn-primary", "center">Getting started Q</div>
       <% end %>
     <% else %>
       <div class="center">※問題を作成中です。</div>
