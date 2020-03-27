@@ -4,16 +4,15 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="quiz">
-      <%= form_tag post_answerring_test_question_path(@test, @question), method: :post do |f| %>
-      <!--= form_for(@question, url: post_answerring_test_question_path(@test.id, @question.id), method: :post) do %>-->
+      <!--= form_tag post_answerring_test_question_path(@test, @question), method: :post do %>-->
+      <%= form_for(@question, url: post_answerring_test_question_path(@test.id, @question.id), method: :post) do |f| %>
         <div class="radio_btn">
           <li>問題（<%= @question_num %>）</li>
           <div class="quiz"><%= @question.Q %></div>
           <div class="quiz">選択肢</div>
           <% for i in 0..@ia do %>
             <%= fields_for @answers[i] do |f_answer| %>
-               <!--binding.pry %>-->
-              <%= f_answer.hidden_field :tested_id, :value => current_user.id %>
+              <%= f_answer.hidden_field :tested_id, :value => @user.id %>
               <%= f_answer.hidden_field :select_id, :value => @selects[i].id %>
               <p><%= "(#{ i+1 })" %></p>
               <%= f_answer.radio_button :select_A, 1 %>
@@ -22,8 +21,8 @@
             <% end %>
           <% end %>
         </div>
-      <!--= f.submit "Next", class: "btn btn-primary" %>-->
-      <%= submit_tag "Next", class: "btn btn-primary" %>
+      <%= f.submit "Next", class: "btn btn-primary" %>
+      <!--= submit_tag "Next", class: "btn btn-primary" %>-->
       <% end %>
     </div>
   </div>

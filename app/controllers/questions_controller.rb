@@ -70,7 +70,7 @@ class QuestionsController < ApplicationController
     end
     
     def answer_params
-      params.require(:answer).permit(:test_id, :tested_id, :select_A, :select_id)
-      params.permit(:test_id, :Q, :correct_A, :point)
+      params.require(:answer).permit(:tested_id, :select_A, :select_id)
+      # params.permit(:test_id, :Q, :correct_A, :point)
     end
 end
