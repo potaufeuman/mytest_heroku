@@ -1,4 +1,9 @@
 module AnswersHelper
+  def stats(true_count, false_count)
+    @answer_count = true_count + false_count
+    @true_ratio = ((true_count/@answer_count.to_f)*100).round(2)
+  end
+  
   def answers_show(test)
     @answers = []
     @questions = []

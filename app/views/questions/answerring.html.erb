@@ -1,10 +1,8 @@
-<% require "pry" %>
 <% provide(:title, 'Take a test') %>
 <h1><%= yield(:title) %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="quiz">
-      <!--= form_tag post_answerring_test_question_path(@test, @question), method: :post do %>-->
       <%= form_for(@question, url: post_answerring_test_question_path(@test.id, @question.id), method: :post) do |f| %>
         <div class="radio_btn">
           <li>問題（<%= @question_num %>）</li>
@@ -21,8 +19,7 @@
             <% end %>
           <% end %>
         </div>
-      <%= f.submit "Next", class: "btn btn-primary" %>
-      <!--= submit_tag "Next", class: "btn btn-primary" %>-->
+        <%= f.submit "Next", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>

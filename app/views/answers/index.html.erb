@@ -3,9 +3,10 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="quiz">
-      <h4>回答者：<%= @user.name %></h4><br>
+      <h4>回答者：<%= @user.name %></h4>
       <h4>結果　：</h4>
       <% unless @answers == nil %>
+        <% true_count = 0 %><% false_count = 0 %>
         <% @answers.each_with_index do |answer, i| %>
           <% if answer.select_A == 1 %>
             <li>問題<%= "（#{i+1}）"%></li>
@@ -14,14 +15,27 @@
             <li><%= Select.find(answer.select_id).content %></li>
             <% if answer.select_id == @questions[0].selects.find_by(judge="1").id %>
               <div class="true">正解</div>
+              <% true_count += 1%>
             <% else %>
               <div class="false">不正解</div><br>
               正解：<%= @questions[0].selects.find_by(judge="1").content %>
+              <% false_count += 1%>
             <% end %>
           <% end %>
         <% end %>
+        <% stats(true_count, false_count) %>
+        <div class="stats">
+          <table>
+            <h4>
+              <tr><th>正解数</th><td><%= true_count %></td></tr>
+              <tr><th>回答数</th><td><%= @answer_count %></td></tr>
+              <tr><th>正答率</th><td><%= @true_ratio %> %</td></tr>
+            </h4>
+          </table>
+        </div>
       <% else %>
-        申し訳ありません。回答データが登録されておりません。
+        申し訳ありません、回答データが登録されておりません。<br>
+        しばらく経ってから、再度受験してください。
       <% end %>
     </div>
   </div>

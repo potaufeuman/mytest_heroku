@@ -71,6 +71,5 @@ class QuestionsController < ApplicationController
     
     def answer_params
       params.require(:answer).permit(:tested_id, :select_A, :select_id)
-      # params.permit(:test_id, :Q, :correct_A, :point)
     end
 end
