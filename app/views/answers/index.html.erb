@@ -2,23 +2,27 @@
 <h1><%= yield(:title) %></h1>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <div class="quiz">
-      <h4>回答者：<%= @user.name %></h4>
-      <h4>結果　：</h4>
+    <!--<div class="quiz">-->
+      <h4>回答者　：<%= @user.name %></h4>
+      <h4>分野　　：<%= @test.subject %></h4>
+      <h4>テスト　：<%= @test.title %></h4>
+      <h4>結果　　：</h4>
+      <div class="microposts">
       <% unless @answers == nil %>
         <% true_count = 0 %><% false_count = 0 %>
         <% @answers.each_with_index do |answer, i| %>
           <% if answer.select_A == 1 %>
-            <li>問題<%= "（#{i+1}）"%></li>
-            <li><%= Question.find(answer.question_id).Q %></li>
-            <li>あなたの回答：</li>
-            <li><%= Select.find(answer.select_id).content %></li>
-            <% if answer.select_id == @questions[0].selects.find_by(judge="1").id %>
+            <% question_A = Question.find(answer.question_id) %>
+            <li>問題 "（<%=Question.where(test_id: question_A.test_id).index(question_A)+1%>）
+            <%= question_A.Q %></li>
+            <li>あなたの回答：
+            <%= Select.find(answer.select_id).content %></li>
+            <% if answer.select_id == question_A.selects.find_by(judge: 1).id %>
               <div class="true">正解</div>
               <% true_count += 1%>
             <% else %>
-              <div class="false">不正解</div><br>
-              正解：<%= @questions[0].selects.find_by(judge="1").content %>
+              <div class="false">不正解</div>
+              <div class="tell_right">正解：<%= question_A.selects.find_by(judge: 1).content %></div>
               <% false_count += 1%>
             <% end %>
           <% end %>

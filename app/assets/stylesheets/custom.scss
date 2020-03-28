@@ -85,7 +85,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 table {
-
   background-color: #cdefff;
 }
 
@@ -186,13 +185,22 @@ input {
 }
 
 .true{
+  margin-bottom: 5px;
+  margin-left  :20px;
   color: blue;
   background-color: cyan;
 }
 
 .false{
+  margin-bottom: 5px;
+  margin-left  :20px;
   color: crimson;
   background-color:lightgrey ;
+}
+
+.tell_right{
+  margin-bottom: 5px;
+  margin-left  :20px;
 }
 
 .sidemenu_box{

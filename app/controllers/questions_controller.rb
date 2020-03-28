@@ -55,7 +55,7 @@ class QuestionsController < ApplicationController
         tested_id = @user.id
         redirect_to tested_test_answers_path(tested_id, @test.id)  # 採点ページにジャンプする。
       else
-        redirect_to new_test_question_answer_path(@test, @next_question.id)
+        redirect_to answerring_test_question_path(@test, @next_question.id)
       end
     else
       redirect_to request.referrer || mytests_path

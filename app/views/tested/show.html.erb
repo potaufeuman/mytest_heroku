@@ -1,0 +1,14 @@
+<% provide(:title, "Grade") %>
+<div class = "row">
+  <%= render "users/side_menu", user: @user %>
+  <div class="col-md-8">
+    <% if @user.tests.any? %>
+      <h3>Tests (<%= @tests.count %>)</h3>
+      <%= will_paginate @tests %>
+      <ol class="microposts">
+        <%= render @tests  %>
+      </ol>
+      <%= will_paginate @tests %>
+    <% end %>
+  </div>
+</div>

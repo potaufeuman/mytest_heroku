@@ -7,6 +7,7 @@ class AnswersController < ApplicationController
     @user = current_user
     @test = Test.find(params[:test_id])
     answers_show(@test)
+    # @question_A = Question.find(answer.question_id)
   end
   
   def show
