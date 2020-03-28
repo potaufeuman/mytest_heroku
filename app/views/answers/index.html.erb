@@ -12,10 +12,10 @@
             <li><%= Question.find(answer.question_id).Q %></li>
             <li>あなたの回答：</li>
             <li><%= Select.find(answer.select_id).content %></li>
-            <% if answer.select_id == @questions[0].selects.find_by(judge="1") %>
-              正解
+            <% if answer.select_id == @questions[0].selects.find_by(judge="1").id %>
+              <div class="true">正解</div>
             <% else %>
-              不正解<br>
+              <div class="false">不正解</div><br>
               正解：<%= @questions[0].selects.find_by(judge="1").content %>
             <% end %>
           <% end %>

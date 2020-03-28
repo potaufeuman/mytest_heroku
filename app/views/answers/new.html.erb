@@ -4,25 +4,31 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="quiz">
-      <%= form_tag test_question_answers_path(@test, @question), method: :post do %>
+      <!--= form_tag test_question_answers_path(@test, @question), method: :post do %>-->
         <div class="radio_btn">
           <li>問題（<%= @question_num %>）</li>
           <div class="quiz"><%= @question.Q %></div>
           <div class="quiz">選択肢</div>
-          <% for i in 0..@ia do %>
-            <!--= form_for(@answers[i], url: test_question_answers_path(@test, @question), method: :post) do |f_answer| %>-->
-            <%= fields_for @answers[i] do |f_answer| %>
+           <!--for i in 0..@ia do %>-->
+          <%= form_for(@answer, url: test_question_answers_path(@test, @question), method: :post) do |f_answer| %>
               <%= f_answer.hidden_field :tested_id, :value => @user.id %>
-              <%= f_answer.hidden_field :select_id, :value => @selects[i].id %>
-              <p><%= "(#{ i+1 })" %></p>
-              <%= f_answer.radio_button :select_A, 1 %>
-              <%= f_answer.label :select_A, @selects[i].content,
-                  {value: @selects[i].id, style: "display: inline-block;"} %>
-            <% end %>
+              <%= f_answer.hidden_field :select_A, :value => 1 %>
+              <p><%= "(#{ 1 })" %></p>
+              <%= f_answer.radio_button :select_id, @selects[0].id %>
+              <%= f_answer.label :select_id, @selects[0].content,
+                  {value: @selects[0].id, style: "display: inline-block;"} %>
+                  
+              <%= f_answer.hidden_field :tested_id, :value => @user.id %>
+              <%= f_answer.hidden_field :select_A, :value => 1 %>
+              <p><%= "(#{ 2 })" %></p>
+              <%= f_answer.radio_button :select_id, @selects[1].id %>
+              <%= f_answer.label :select_id, @selects[1].content,
+                  {value: @selects[1].id, style: "display: inline-block;"} %>
+              <%= f_answer.submit "Next", class: "btn btn-primary" %>
           <% end %>
         </div>
-        <%= submit_tag "Next", class: "btn btn-primary" %>
-      <% end %>
+      <!--= submit_tag "Next", class: "btn btn-primary" %>-->
+       <!--end %>-->
     </div>
   </div>
 </div>

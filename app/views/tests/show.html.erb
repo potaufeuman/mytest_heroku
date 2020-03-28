@@ -5,6 +5,9 @@
     <h3>カテゴリ：<%= @test.subject %></h3>
     <h3>タイトル：<%= @test.title %></h3>
     <% if @test.questions.any? && @first_question.selects.any? %>
+      <%= link_to new_test_question_answer_path(@test, @first_question) do  %>
+        <div class="btn btn-primary", "center">Getting started A</div>
+      <% end %>
       <%= link_to answerring_test_question_path(@test, @first_question) do  %>
         <div class="btn btn-primary", "center">Getting started Q</div>
       <% end %>

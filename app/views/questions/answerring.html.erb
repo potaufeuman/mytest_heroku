@@ -13,10 +13,10 @@
           <% for i in 0..@ia do %>
             <%= fields_for @answers[i] do |f_answer| %>
               <%= f_answer.hidden_field :tested_id, :value => @user.id %>
-              <%= f_answer.hidden_field :select_id, :value => @selects[i].id %>
+              <%= f_answer.hidden_field :select_A, :value => 1 %>
               <p><%= "(#{ i+1 })" %></p>
-              <%= f_answer.radio_button :select_A, 1 %>
-              <%= f_answer.label :select_A, @selects[i].content,
+              <%= f_answer.radio_button :select_id, @selects[i].id %>
+              <%= f_answer.label :select_id, @selects[i].content,
                   {value: @selects[i].id, style: "display: inline-block;"} %>
             <% end %>
           <% end %>

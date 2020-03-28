@@ -35,7 +35,6 @@ class AnswersController < ApplicationController
     @answer = @question.answers.build(answer_params)
     answer_selects(@question)
     now_answer(@test)  # 回答すると、次の質問にジャンプする。AnswersHelper参照。
-    # @answer.select_A == 1? @answer.save :
     if @answer.save
       if @next_question == nil
         tested_id = @user.id
@@ -50,6 +49,6 @@ class AnswersController < ApplicationController
   
   private
     def answer_params
-      params.permit(:test_id, :tested_id, :select_A, :select_id)
+      params.require(:answer).permit(:test_id, :tested_id, :select_A, :select_id)
     end
 end
