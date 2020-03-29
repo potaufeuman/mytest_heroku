@@ -27,3 +27,6 @@ app/assets/javascripts/*.coffee
 
 # Ignore scss
 app/assets/stylesheets/application.scss
+
+; unknown
+"\342\200\235/"
