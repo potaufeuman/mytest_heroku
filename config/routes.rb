@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   end
   resources :testeds do
     resources :tests do
-      resources :answers, only: [:index, :show]
+      resources :answers, only: [:index, :show, :destroy]
     end
   end
 end

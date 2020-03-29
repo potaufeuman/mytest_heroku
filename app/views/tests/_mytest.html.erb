@@ -1,12 +1,10 @@
 <li id="micropost-<%= test.id %>">
-  <span class="content"><%= test.subject %></span>
+  <span class="content">分野：<%= test.subject %></span>
   <span class="content">
-    <%= link_to test, target: :_blank do %>
-      <%= test.title %>
-    <% end %>
+    タイトル：<%= link_to test, target: :_blank do %><%= test.title %><% end %>
+    <br>
     <% if current_user?(test.user) %>
       <%= link_to new_test_question_path(test.id), target: :_blank do %>
-      <!--= link_to test_questions_path(test.id), target: :_blank do %>-->
         question
       <% end %>
       <%= link_to "edit", edit_test_path(test.id) %>

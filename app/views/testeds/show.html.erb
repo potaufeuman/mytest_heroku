@@ -1,0 +1,17 @@
+<% provide(:title, "Grade") %>
+<div class = "row">
+  <%= render "users/side_menu", user: @user %>
+  <div class="col-md-8">
+    <% if @answers.any? %>
+      <h3>Tests (<%= @tests.count %>)</h3>
+      <ol class="microposts">
+        <% @tests.each do |test| %>
+          <%= link_to tested_test_answers_path(@user.id, test.id), target: :_blank do %>
+            <li><%= test.subject %></li>
+            <li><%= test.title %></li>
+          <% end %>
+        <% end %>
+      </ol>
+    <% end %>
+  </div>
+</div>

@@ -13,10 +13,16 @@
         <% @answers.each_with_index do |answer, i| %>
           <% if answer.select_A == 1 %>
             <% question_A = Question.find(answer.question_id) %>
-            <li>問題 "（<%=Question.where(test_id: question_A.test_id).index(question_A)+1%>）
+            <li>問題 （<%=Question.where(test_id: question_A.test_id).index(question_A)+1%>）
             <%= question_A.Q %></li>
-            <li>あなたの回答：
-            <%= Select.find(answer.select_id).content %></li>
+            <li>あなたの回答：<%= Select.find(answer.select_id).content %>
+            <span class="timestamp">
+              <%= time_ago_in_words(answer.created_at) %> 前に回答
+              <% if current_user?(@user) %>
+                <%= link_to "delete", tested_test_answer_path(answer.tested_id, id: answer.id),
+                                      method: :delete, data: { confirm: "You sure?" } %>
+              <% end %>
+            </span></li>
             <% if answer.select_id == question_A.selects.find_by(judge: 1).id %>
               <div class="true">正解</div>
               <% true_count += 1%>

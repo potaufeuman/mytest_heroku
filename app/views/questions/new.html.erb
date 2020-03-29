@@ -15,7 +15,7 @@
             <h4><%= question.Q %></h4>
           </div>
           <div align="right">
-            <%= link_to "delete test", test_question_path(@test,question),
+            <%= link_to "delete question", test_question_path(@test,question),
                 method: :delete,  data: { confirm: "You sure?" } %>
           </div>
           <% question.selects.each_with_index do |select, ia| %>

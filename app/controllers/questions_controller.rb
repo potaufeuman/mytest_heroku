@@ -6,7 +6,6 @@ class QuestionsController < ApplicationController
     @user = current_user
     @test = Test.find(params[:test_id])
     @question = Question.new
-    @question.selects.build
   end
 
   def create
@@ -26,8 +25,8 @@ class QuestionsController < ApplicationController
   def destroy
     @question = Question.find(params[:id])
     @question.destroy
-    flash[:success] = "Test deleted"
-    redirect_to request.referrer || mytests_path
+    flash[:success] = "Question deleted"
+    redirect_to new_test_question_path || mytests_path
   end
   
   def answerring
@@ -64,9 +63,7 @@ class QuestionsController < ApplicationController
   
   private
     def question_params
-      params.require(:question).permit(:test_id, :Q, :correct_A, :point,
-                      selects_attributes: [:id, :judge, :content],
-                      answers_attributes: [:test_id, :tested_id, :select_A, :select_id])
+      params.require(:question).permit(:test_id, :Q, :correct_A, :point)
     end
     
     def answer_params
