@@ -1,5 +1,12 @@
 require 'rails_helper'
 
+RSpec.feature 'タイトル' do
+  specify 'タイトル内容の表示' do
+    visit root_path
+    expect(page).to have_title 'Top | MyTest'
+  end
+end
+
 RSpec.feature 'ログイン' do
   background do
     User.create!(name:  "Example User",

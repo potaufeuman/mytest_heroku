@@ -35,8 +35,8 @@ group :development do
 end
 
 # https://qiita.com/fuqda/items/61e6b39d43733cd19802
+# https://qiita.com/IrieLuka/items/eba8693272c31d6af7f0
 group :test do
-  # gem 'rails-controller-testing', '1.0.2'
   gem 'minitest',                 '5.10.3'
   gem 'minitest-reporters',       '1.1.14'
   gem 'guard',                    '2.13.0'
@@ -47,6 +47,9 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem "selenium-webdriver"
+  gem 'shoulda-matchers',
+    git: 'https://github.com/thoughtbot/shoulda-matchers.git',
+    branch: 'rails-5'
 end
 
 group :production do
