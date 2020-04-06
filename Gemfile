@@ -43,7 +43,7 @@ group :test do
   gem 'guard-minitest',           '2.4.4'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-  gem 'capybara'
+  gem 'capybara' #Rails5.1以後ではもとから入っているが、一応インストール
   gem 'database_cleaner'
   gem 'launchy'
   gem "selenium-webdriver"
