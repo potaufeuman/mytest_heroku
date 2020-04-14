@@ -15,6 +15,7 @@ gem 'coffee-rails', '4.2.2'
 gem 'jquery-rails', '4.3.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
+gem 'ransack'
 
 group :development, :test do
   gem 'hirb'
@@ -58,4 +59,4 @@ group :production do
 end
 
 # Windows環境ではtzinfo-dataというgemを含める必要があります
-# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

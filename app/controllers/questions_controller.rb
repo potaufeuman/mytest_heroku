@@ -63,7 +63,7 @@ class QuestionsController < ApplicationController
   
   private
     def question_params
-      params.require(:question).permit(:test_id, :Q, :correct_A, :point)
+      params.require(:question).permit(:test_id, :Q, :correct_A, :point, :picture)
     end
     
     def answer_params
