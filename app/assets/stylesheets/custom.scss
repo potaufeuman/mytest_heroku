@@ -4,7 +4,9 @@
 @gray-light: #777;
 
 /* mixins, variables, etc. */
-
+.space{
+  margin-top: 200px;
+}
 $gray-medium-light: #eaeaea;
 
 @mixin box_sizing {

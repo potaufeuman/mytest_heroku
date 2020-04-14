@@ -1,32 +1,33 @@
 <% provide(:title, "Help") %>
 <h1><%= yield(:title) %></h1>
+<div id="top_page"></div>
 <div class="row">
   <div class="col-md-4">
-    <li>ユーザー情報を登録</li>
-    <li>ログイン</li>
-    <li>テストを受ける</li>
-    <li>テストを作る</li>
-    <li>成績を見る</li>
+    <!--サイドメニューは縦に動かないようにしたい-->
+    <li><a href="#signup">ユーザー情報を登録</a></li>
+    <li><a href="#login">ログイン</a></li>
+    <li><a href="#test">テストを受ける</a></li>
+    <li><a href="#create_test">テストを作る</a></li>
+    <li><a href="#grade">成績を見る</a></li>
   </div>
   <div class="col-md-8">
-    <li>ユーザー情報を登録</li>
+    <div id="signup"><h4><li>ユーザー情報を登録</li></h4></div><br>
     「⇨新しくユーザー登録される方はこちらへ」をクリック<br>
     Signup画面に、お名前、メールアドレスを入力し、パスワードを決めて入力してください。<br>
     「Signup」ボタンを押すと、入力したメールアドレスに確認のメールが送信されます。<br>
     届いたメールのリンク箇所をクリックすると、ユーザー登録が完了します。<br>
     <br>
-    
-    <li>ログイン</li>
+    <div id="login"><h4><li>ログイン</h4></li></div><br>
     トップページから、メールアドレス、パスワードを入力して「Log in」をクリック<br>
     <br>
     
-    <li>テストを受ける</li>
+    <div id="test"><h4><li>テストを受ける</h4></li></div><br>
     ログイン後、サイドメニューの「Test」をクリック<br>
     画面右側に受けられるテストの一覧が表示されます。
     各テストのタイトルをクリックすると、テストの受験画面に進みます。<br>
     <br>
     
-    <li>テストを作る</li>
+    <div id="create_test"><h4><li>テストを作る</li></h4></div><br>
     ログイン後、サイドメニューの「Create」をクリック<br>
     カテゴリ、タイトル名を考えて入力します。<br>
     画面右側にテストが作成されました。次に、「question」を選択します。<br>
@@ -38,10 +39,28 @@
     正解ならばチェックボックスにチェックを入れ、不正解ならチェックは入れずに「Create selects」をクリック。<br>
     <br>
     
-    <li>成績を見る</li>
+    <div id="grade"><h4><li>成績を見る</h4></li></div><br>
     過去に受けたテストの結果を見たい時は「Grade」をクリック。<br>
     受けたテストの一覧が画面右側に現れるので、確認したいテストをクリック。<br>
     <br>
     <br>
+    <div id="bottom_page"></div>
   </div>
 </div>
+
+<!--<script src="../../assets/javascripts/jquery.min.js"></script>-->
+<!--<script>-->
+<!--  document.getElementById('scroll_top').addEventListener('click',function(){-->
+<!--    $("html,body").animate({scrollTop:$('#top_page').offset().top - 100});-->
+<!--  });-->
+<!--  document.getElementById('scroll_bottom').addEventListener('click',function(){-->
+<!--    $("html,body").animate({scrollTop:$('#bottom_page').offset().top});-->
+<!--  });-->
+<!--  document.getElementById('#menu_signup').addEventListener('click',function(){-->
+<!--    $("html,body").animate({scrollTop:$('signup_section').offset().top - 50});-->
+<!--  });-->
+<!--  $('#menu_login').click(function(){-->
+<!--    var target = $('#login_section').offset().top;-->
+<!--    $("html,body").animate({scrollTop:target});-->
+<!--  });-->
+<!--</script>-->
