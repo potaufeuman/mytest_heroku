@@ -30,3 +30,6 @@ app/assets/stylesheets/application.scss
 
 ; unknown
 "\342\200\235/"
+
+# アップロードされたテスト画像を無視する
+/public/uploads
