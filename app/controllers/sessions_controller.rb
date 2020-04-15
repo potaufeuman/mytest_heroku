@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   def new
     @user = current_user
+    @tests = Test.limit(5)
   end
 
   def create

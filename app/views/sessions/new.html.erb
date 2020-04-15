@@ -42,5 +42,21 @@
       <% end %>
     </div>
   </div>
-<!--テストの画像-->
+  <!--テストの画像-->
+  <div class = "space"></div>
+  <div class = "center">
+    <h4>現在、以下のようなテストが登録されています</h4>
+    <ol class="microposts">
+      <% @tests.each do |test| %>
+        <li id="micropost-<%= test.id %>">
+          <%= gravatar_for(test.user, size: 50) %>
+          <span class="content"><%= test.subject %></span>
+          <span class="content"><%= test.title %></span>
+          <span class="timestamp">
+            Create Test <%= time_ago_in_words(test.created_at) %> ago.
+          </span>
+        </li>
+      <% end %>
+    </ol>
+  </div>
 <% end %>
