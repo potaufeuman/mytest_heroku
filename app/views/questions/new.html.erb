@@ -18,10 +18,17 @@
             <%= link_to "delete question", test_question_path(@test,question),
                 method: :delete,  data: { confirm: "You sure?" } %>
           </div>
+          <% validate_select = 0 %>
           <% question.selects.each_with_index do |select, ia| %>
             <li>選択肢（<%= ia+1%>）</li>
             <%= select.judge == 1 ? "正解：" : "不正解：" %>
             <%= select.content %>
+            <% validate_select += select.judge %>
+          <% end %>
+          <% if validate_select == 0 %>
+            <div class="alert alert-danger">
+              正解を用意してください
+            </div>
           <% end %>
           <div align="right">
             <%= link_to "create selects", new_test_question_select_path(@test,question) %>

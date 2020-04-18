@@ -18,6 +18,7 @@ class TestsController < ApplicationController
     @user = User.find_by(id: params[:user_id])
     @test = Test.find(params[:id])
     @first_question = @test.questions.first
+    @questions = Question.where(test_id: @test.id)
     @answer = Answer.new
   end
     

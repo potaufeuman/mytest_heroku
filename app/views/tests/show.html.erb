@@ -4,12 +4,42 @@
   <div class="col-md-6 col-md-offset-3">
     <h3>カテゴリ：<%= @test.subject %></h3>
     <h3>タイトル：<%= @test.title %></h3>
-    <% if @test.questions.any? && @first_question.selects.any? %>
-      <%= link_to answerring_test_question_path(@test, @first_question) do  %>
-        <div class="btn btn-primary", "center">Getting started</div>
+    <% if @test.questions.any? %>
+      <% validate_count = 0 %><% i_question = 0 %>
+      <% validate_select = 0 %><% i_select = 0 %>
+      <% validate_select_count = 0 %>
+      <% @questions.each_with_index do |question, i| %>
+        <% validate_count += 1 if question.selects.any? %>
+        <% i_question = i+1 %>
+        <% question.selects.each_with_index do |select, ia| %>
+          <% validate_select += select.judge %>
+          <% i_select = ia %>
+        <% end %>
+        <% validate_select_count += 1 unless validate_select == 0 %>
+      <% end %>
+      <% if validate_count == i_question %>
+        <h4>問題数：<%= i_question %></h4>
+        <% if validate_select_count == i_select %>
+          <%= link_to answerring_test_question_path(@test, @first_question) do %>
+            <div class="btn btn-primary", "center">Getting started</div>
+          <% end %>
+        <% else %>
+          <div class="center">
+            ※問題を作成中です。<br>
+            （正解が一つも用意されていない問題がああります）
+          </div>
+        <% end %>
+      <% else %>
+        <div class="center">
+          ※問題を作成中です。<br>
+          （選択肢が用意されていない問題があります）
+        </div>
       <% end %>
     <% else %>
-      <div class="center">※問題を作成中です。</div>
+      <div class="center">
+        ※問題を作成中です。<br>
+        （問題が一つも用意されていない場合）
+      </div>
     <% end %>
   </div>
 </div>
