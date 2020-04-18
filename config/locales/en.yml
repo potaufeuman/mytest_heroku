@@ -1,57 +1,62 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:                              ## 言語名
-  dictionary:                    ## 共通系であることを示す
-    title:                       ## 画面のタイトル
-      create: "create"
-      update: "update"
-      destory:
-        confirm: "confirm"
-    message:                     ## 固定メッセージ
-      create:
-        complete: "create success"
-      update:
-        complete: "update success"
-      destory:
-        confirm: "Are you sure？"
-    button:                      ## 表示するボタン
-      ログイン:  "Log in"
-      Next:   "Next"
-      # create: "新規作成"
-      # search: "検索"
-      # clear: "クリア"
-      # update: "更新"
-      # destory: "削除"
-      # cancel: "キャンセル"
+  create: "create"
+  update: "update"
+  destory:
+    confirm: "confirm"
+  create:
+    complete: "create success"
+  update:
+    complete: "update success"
+  destory:
+    confirm: "Are you sure？"
+  Log in:  "Log in"
+  Next:   "Next"
+  create: "create"
+  search: "search"
+  clear: "clear"
+  update: "update"
+  destory: "destroy"
+  cancel: "cancel"
+##ヘッダー
+  Top: Top
+  Help: Help
+  Language: Language
+  Email: Email
+  Password: Password
+##文章
+  (forgot password): (forgot password)
+  Remember me on this computer: Remember me on this computer
+  Log in as Trial: Log in as Trial
+##side_menu
+  title: title
+  Test: Test
+  CreateTest: Create Test
+  CreatedList: CreatedList
+  Search: Search
+  Grade: Grade
   time:                          ## 表示する時間の形式
     formats:
       default: ! "%Y-%m-%d %H:%M:%S"
+      
+  # dictionary:                    ## 共通系であることを示す
+  #   title:                       ## 画面のタイトル
+  #     create: "create"
+  #     update: "update"
+  #     destory:
+  #       confirm: "confirm"
+  #   message:                     ## 固定メッセージ
+  #     create:
+  #       complete: "create success"
+  #     update:
+  #       complete: "update success"
+  #     destory:
+  #       confirm: "Are you sure？"
+  #   button:                      ## 表示するボタン
+  #     Log in:  "Log in"
+  #     Next:   "Next"
+  #     # create: "新規作成"
+  #     # search: "検索"
+  #     # clear: "クリア"
+  #     # update: "更新"
+  #     # destory: "削除"
+  #     # cancel: "キャンセル"
