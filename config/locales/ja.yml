@@ -24,11 +24,20 @@ ja:                              ## 言語名
   Help: "使い方"
   Language: "言語"
   Email: "メールアドレス"
-  "Password": "パスワード"
+  Password: "パスワード"
 ##文章
-  "forgot password": "パスワードを忘れた時はこちら"
-  "Remember me on this computer": "パスワードを記憶する"
-  "Welcome to MyTest!": "MyTestへようこそ！"
+  (forgot password): "パスワードを忘れた時はこちら"
+  Remember me on this computer: "パスワードを記憶する"
+  Log in as Trial: "お試しでログイン"
+##side_menu
+  title: "タイトル"
+  Test: "テストを受ける"
+  CreateTest: テストを作る
+  CreatedList: あなたが作成したテスト
+  Search: 検索する
+  Grade: 成績
+  
+  
   time:                          ## 表示する時間の形式
     formats:
       default: ! "%Y-%m-%d %H:%M:%S"

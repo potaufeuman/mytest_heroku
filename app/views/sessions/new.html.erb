@@ -1,6 +1,5 @@
 <% provide(:title, "Top") %>
 <% if logged_in? %>
-  <!--redirect_to controller: 'users', action: 'show' %>-->
   <% provide(:title, @user.name) %>
   <div class = "row">
     <%= render "users/side_menu", user: @user %>
@@ -25,20 +24,20 @@
         <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>
         <%= f.label :password %>
-        <%= link_to "(forgot password)", new_password_reset_path %>
+        <%= link_to t(:"(forgot password)"), new_password_reset_path %>
         <%= f.password_field :password, class: 'form-control' %>
         <%= f.label :remember_me, class: "checkbox inline" do %>
           <%= f.check_box :remember_me %>
-          <span>Remember me on this computer</span>
+          <span><%= t :"Remember me on this computer" %></span>
         <% end %>
-        <%= f.submit "Log in", class: "btn btn-primary" %>
+        <%= f.submit t(:"Log in"), class: "btn btn-primary" %>
       <% end %>
       <b><%= link_to "⇨新しくユーザー登録される方はこちらへ", signup_path %></b>
       <div class="space"></div>
       <%= form_for(:session, url: root_path) do |f| %>
         <%= f.hidden_field :email, :value => "example@fortune.org" %>
         <%= f.hidden_field :password, :value => "foobar" %>
-        <%= f.submit "お試しでログイン", class: "btn btn-primary"%>
+        <%= f.submit t(:"Log in as Trial"), class: "btn btn-primary"%>
       <% end %>
     </div>
   </div>

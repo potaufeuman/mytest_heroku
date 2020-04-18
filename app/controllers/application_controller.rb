@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   before_action :set_locale
   
+  # リンクの多言語化に対応する
   def set_locale
     I18n.locale = params[:locale ] || I18n.default_locale
   end
@@ -11,12 +12,14 @@ class ApplicationController < ActionController::Base
     @locale ||= params[:locale] || I18n.default_locale
   end
 
-  def default_url_options(options={})
-    options.merge(locale: locale)
-  end
-  # def default_url_options
-  #   { locale: I18n.locale }
+  # 全リンクにlocale情報をセットする
+  # def default_url_options(options={})
+  #   { locale: I18n.locale }.merge options
+  #   # options.merge(locale: @locale)
   # end
+  def default_url_options
+    { locale: I18n.locale }
+  end
 
   private
     # ユーザーのログインを確認する

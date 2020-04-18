@@ -7,10 +7,11 @@ Rails.application.routes.draw do
     get 'password_resets/new'
     get 'password_resets/edit'
     root "sessions#new"
+    get '/:locale'   => 'sessions#new',as:"locale" 
+    get '/' => redirect("/ja")
     post '/',        to: 'sessions#create'
-  # scope ":/locale", locale:/en|ja/ do
-  scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
-    # get '/:locale'   => 'sessions#new'
+  scope ":/locale", locale:/en|ja/ do
+  # scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
     get  '/',        to: 'sessions#new'
     post '/',        to: 'sessions#create'
     get  '/help',    to: 'static_pages#help'

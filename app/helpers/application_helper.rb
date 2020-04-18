@@ -4,7 +4,7 @@ module ApplicationHelper
     if options[:locale] == I18n.default_locale
       options[:locale] = nil
     end
-    options = params.permit(:locale)
+    options = params.permit!.to_h
     url_for(options)
   end
   
