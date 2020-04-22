@@ -1,7 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@gray-light: #777;
+*{font-family: 
+"メイリオ", "Meiryo", "Helvetica Neue", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro",
+"ＭＳ Ｐゴシック", "MS P Gothic", "Osaka", "Helvetica", "Arial", "Verdana", sans-serif;
+}
 
 /* mixins, variables, etc. */
 .space{
@@ -29,6 +32,8 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
+  margin: 0;
+  background: transparent;
 }
 
 section {
@@ -45,6 +50,24 @@ textarea {
 
 .center h1 {
   margin-bottom: 10px;
+}
+
+.silent_blue{
+  background: rgb(225,229,231);
+}
+
+.white{
+  background: rgb(255,255,255);
+  padding: 5%;
+  border-radius: 10px 10px 10px 10px;
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.6));
+}
+
+.white_narrow{
+  background: rgb(255,255,255);
+  padding: 10px;
+  border-radius: 10px 10px 10px 10px;
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.6));
 }
 
 /* typography */
@@ -71,10 +94,44 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
+#logo_black {
+  margin-right: 0px;
+  font-size: 3em;
+  color: #000;
+  letter-spacing: 1px;
+  padding: -10px;
+  font-weight: bold;
+}
+
 /* sidebar */
+.white_wall{
+  background: #fff;
+  padding-top: 2%;
+  padding-bottom: 20px;
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.6));
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.white_block{
+  background: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.6));
+}
+
+.white_belt{
+  background: #fff;
+  padding: 5px;
+  margin-bottom: 10px;
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.6));
+  text-align: center;
+}
+
+
 .menu{
   margin-left: 50px;
-  
+  background: #fff;
 }
 
 .gravatar {

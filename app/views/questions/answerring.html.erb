@@ -1,8 +1,8 @@
 <% provide(:title, 'Take a test') %>
-<h1><%= yield(:title) %></h1>
+<div class="white_belt"><h1><%= yield(:title) %></h1></div>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <div class="quiz">
+    <div class="quiz white_block">
       <%= form_for(@question, url: post_answerring_test_question_path(@test.id, @question.id), method: :post) do |f| %>
         <div class="radio_btn">
           <li>問題（<%= @question_num %>）</li>

@@ -5,9 +5,11 @@
     <%= render "users/side_menu", user: @user %>
   </div>
 <% else %>
-  <div class="center"><h1>Welcome to MyTest!</h1></div>
+  <div class="center", id="logo_black"><ol class="white_narrow">
+    Welcome to MyTest!
+  </ol></div>
   <div class="row">
-    <aside class="col-md-6">
+    <aside class="col-md-6 white">
       このサイトは、チームで知識の共有ができているか互いにチェックし合うことを目的に作りました。<br>
       ユーザーは、簡単な選択式の問題を作り、仲間とテストを受験し合って知識の共有度合いを測ることができます。<br>
       <br>
@@ -19,7 +21,7 @@
       「テスト」といっても怖がる必要はありません。<br>
       楽しんで使いましょう！<br>
     </aside>
-    <div class="col-md-6">
+    <div class="col-md-6 white">
       <%= form_for(:session, url: root_path) do |f| %>
         <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>
@@ -42,7 +44,7 @@
     </div>
   </div>
   <div class = "space"></div>
-  <div class = "center">
+  <div class = "center white">
     <h4>現在、以下のようなテストが登録されています</h4>
     <ol class="microposts">
       <% @tests.each do |test| %>

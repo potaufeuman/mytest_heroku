@@ -1,6 +1,6 @@
 <% provide(:title, 'Create Question') %>
-<h1><%= yield(:title) %></h1>
-<div class="row">
+<div class="white_belt"><h1><%= yield(:title) %></h1></div>
+<div class="row white_block">
   <%= render 'create_select', user: @user, test: @test, question: @question, select: @select %>
   <% if @user.tests.any? %>
     <div class="col-md-8">

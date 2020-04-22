@@ -1,8 +1,8 @@
 <% provide(:title, "Help") %>
-<h1><%= yield(:title) %></h1>
+<div class="white_belt"><h1><%= yield(:title) %></h1></div>
 <div id="top_page"></div>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-4 white_wall">
     <!--サイドメニューは縦に動かないようにしたい-->
     <li><a href="#signup">ユーザー情報を登録</a></li>
     <li><a href="#login">ログイン</a></li>
@@ -10,7 +10,7 @@
     <li><a href="#create_test">テストを作る</a></li>
     <li><a href="#grade">成績を見る</a></li>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-8 white_block">
     <div id="signup"><h4><li>ユーザー情報を登録</li></h4></div><br>
     「⇨新しくユーザー登録される方はこちらへ」をクリック<br>
     Signup画面に、お名前、メールアドレスを入力し、パスワードを決めて入力してください。<br>

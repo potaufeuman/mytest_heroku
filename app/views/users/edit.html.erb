@@ -1,9 +1,8 @@
 <% provide(:title, "Edit user") %>
 <% provide(:button_text, 'Save changes') %>
-<%= render "side_menu", user: @user %>
-<h1>Update your profile</h1>
+<div class="white_belt"><h1>Update your profile</h1></div>
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3 white">
     <%= render 'form' %>
     <div class="gravatar_edit">
       <%= gravatar_for @user %>
