@@ -28,12 +28,14 @@ ja:                              ## 言語名
 ##文章
   (forgot password): "パスワードを忘れた時はこちら"
   Remember me on this computer: "パスワードを記憶する"
+  ⇨新しくユーザー登録される方はこちらへ: ⇨新しくユーザー登録される方はこちらへ
   Log in as Trial: "お試しでログイン"
+  現在、以下のようなテストが登録されています: 現在、以下のようなテストが登録されています
 ##side_menu
-  title: "タイトル"
-  Test: "テストを受ける"
-  CreateTest: テストを作る
-  CreatedList: あなたが作成したテスト
+  title: タイトル
+  Test: テストを受ける
+  CreateTest: 新規作成
+  CreatedList: 作成したテスト
   Search: 検索する
   Grade: 成績
   

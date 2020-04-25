@@ -1,9 +1,7 @@
 ja:
-  # view_test:
-  #   index:
-  title: "タイトル"
-  Test: "テストを受ける"
-  Create: テストを作る
-  CreatedList: あなたが作成したテスト
+  title: タイトル
+  Test: テストを受ける
+  Create: 新規作成
+  CreatedList: 作成したテスト
   Search: テストを探す
   Grade: 成績

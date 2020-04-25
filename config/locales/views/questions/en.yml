@@ -1,6 +1,9 @@
 en:
   分野: subject
   タイトル: title
+  問題: question
+  選択肢: choices
+  正解を用意してください: Set the correct answer.
 # sentence
   問題を作成中です。: It's in progress.
   正解が一つも用意されていない問題があります: "There are some questions which have no correct answers."

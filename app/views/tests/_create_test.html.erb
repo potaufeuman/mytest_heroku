@@ -6,7 +6,7 @@
   <div class = "menu">
     <%= form_for(test, locale: true) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :"カテゴリ" %>
+      <%= f.label :"分野" %>
       <%= f.text_field :subject, class: 'form-control' %>
       <%= f.label :"問題のタイトル" %>
       <%= f.text_field :title, class: 'form-control' %>

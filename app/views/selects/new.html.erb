@@ -4,11 +4,11 @@
   <%= render 'create_select', user: @user, test: @test, question: @question, select: @select %>
   <% if @user.tests.any? %>
     <div class="col-md-8">
-      <div class="center"><h4>カテゴリ：<%= @test.subject %></h4></div>
-      <div class="center"><h4>タイトル：<%= @test.title %></h4></div>
+      <div class="center"><h4><%= t :分野 %>：<%= @test.subject %></h4></div>
+      <div class="center"><h4><%= t :タイトル %>：<%= @test.title %></h4></div>
       <% @test.questions.each_with_index do |question, i| %>
         <div class="microposts">
-          <li>問題（<%= i+1 %>）</li>
+          <li><%= t :問題 %>（<%= i+1 %>）</li>
           <h4><%= question.Q %></h4>
         </div>
         <div align="right">
@@ -17,7 +17,7 @@
         </div>
         <% question.selects.each_with_index do |select, ia| %>
           <div class="quiz">
-            選択肢（<%= ia+1%>）
+            <%= t :選択肢 %>（<%= ia+1%>）
             <%= select.judge == 1 ? "正解：" : "不正解：" %>
             <%= select.content %>
           </div>

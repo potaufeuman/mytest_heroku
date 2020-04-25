@@ -1,10 +1,10 @@
 <li id="micropost-<%= test.id %>">
   <%= link_to gravatar_for(test.user, size: 50), test.user %>
   <span class="user"><%= link_to test.user.name, test.user %></span>
-  <span class="content"><%= test.subject %></span>
+  <span class="content"><%= t :分野 %>：<%= test.subject %></span>
   <span class="content">
     <%= link_to test, target: :_blank do %>
-      <%= test.title %>
+      <%= t :タイトル %>：<%= test.title %>
     <% end %>
   </span>
   <span class="timestamp">

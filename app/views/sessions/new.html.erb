@@ -34,7 +34,7 @@
         <% end %>
         <%= f.submit t(:"Log in"), class: "btn btn-primary" %>
       <% end %>
-      <b><%= link_to "⇨新しくユーザー登録される方はこちらへ", signup_path %></b>
+      <b><%= link_to t(:"⇨新しくユーザー登録される方はこちらへ"), signup_path %></b>
       <div class="space"></div>
       <%= form_for(:session, url: root_path) do |f| %>
         <%= f.hidden_field :email, :value => "example@fortune.org" %>
@@ -45,7 +45,7 @@
   </div>
   <div class = "space"></div>
   <div class = "center white">
-    <h4>現在、以下のようなテストが登録されています</h4>
+    <h4><%= t :現在、以下のようなテストが登録されています %></h4>
     <ol class="microposts">
       <% @tests.each do |test| %>
         <li id="micropost-<%= test.id %>">

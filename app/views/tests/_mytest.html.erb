@@ -1,14 +1,14 @@
 <li id="micropost-<%= test.id %>">
-  <span class="content">分野：<%= test.subject %></span>
+  <span class="content"><%= t :分野 %>：<%= test.subject %></span>
   <span class="content">
-    タイトル：<%= link_to test, target: :_blank do %><%= test.title %><% end %>
+    <%= t :タイトル%>：<%= link_to test, target: :_blank do %><%= test.title %><% end %>
     <br>
     <% if current_user?(test.user) %>
       <%= link_to new_test_question_path(test.id), target: :_blank do %>
-        question
+        <%= t :"question" %>
       <% end %>
-      <%= link_to "edit", edit_test_path(test.id) %>
-      <%= link_to "delete", test, method: :delete,
+      <%= link_to t(:"edit"), edit_test_path(test.id) %>
+      <%= link_to t(:"delete"), test, method: :delete,
                                   data: { confirm: "You sure?"} %>
     <% end %>
   </span>

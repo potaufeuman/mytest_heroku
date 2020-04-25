@@ -26,7 +26,9 @@ en:                              ## 言語名
 ##文章
   (forgot password): (forgot password)
   Remember me on this computer: Remember me on this computer
+  ⇨新しくユーザー登録される方はこちらへ: ⇨New user? Let's sign up!
   Log in as Trial: Log in as Trial
+  現在、以下のようなテストが登録されています: Now, there are the tests like below list.
 ##side_menu
   title: title
   Test: Test
