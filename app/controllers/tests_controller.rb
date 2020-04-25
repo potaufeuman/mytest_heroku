@@ -34,6 +34,7 @@ class TestsController < ApplicationController
       flash[:success] = "Test created!"
       redirect_to mytests_path
     else
+      @tests = []
       render mytests_path
     end
   end

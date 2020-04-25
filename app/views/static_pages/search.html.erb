@@ -1,0 +1,14 @@
+<% provide(:title, "TestList") %>
+<div class = "row">
+  <%= render "users/side_menu", user: @user %>
+  <div class="col-md-8 white_block">
+    <%= search_form_for @search, url:searchresult_path do |f| %>
+      <div class="actions_small">
+        <%= f.label :title_cont, "テストのタイトルに含まれる文字列" %>
+        <%= f.search_field :title_cont %>
+        <!--title_cont は、titleからの部分検索を可能にする-->
+        <%= f.submit ("検索する"), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -21,6 +21,13 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale }
   end
 
+  def search
+    @user = current_user
+    @search = Test.ransack(params[:q])
+    @search_tests = @search.result
+    # (distinct: true)
+  end
+
   private
     # ユーザーのログインを確認する
     def logged_in_user

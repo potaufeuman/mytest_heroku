@@ -1,0 +1,11 @@
+<% provide(:title, "Search Result") %>
+<div class = "row">
+  <%= render "users/side_menu", user: @user %>
+  <div class="col-md-8 white_block">
+    <h3>Search Result (<%= @search_tests.count %>)</h3>
+    <ol class="microposts">
+      <%= render @search_tests  %>
+    </ol>
+    <%= will_paginate @search_tests %>
+  </div>
+</div>

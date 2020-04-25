@@ -11,7 +11,7 @@
       <% end %>
     </li>
     <li><%= link_to mytests_path do %><%= t :CreatedList %><% end %></li>
-    <li><%= t :Search %></li>
+    <li><%= link_to search_path do %><%= t :Search %><% end %></li>
     <li><%= link_to tested_path(@user.id) do %><%= t :Grade %><% end %></li>
   </div>
 </aside>

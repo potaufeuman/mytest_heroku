@@ -1,15 +1,10 @@
 Rails.application.routes.draw do
-  # scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
-  #   # For details on the DSL available within this file, see 
-  #   resources :resource_As
-  # end
-
-    get 'password_resets/new'
-    get 'password_resets/edit'
     root "sessions#new"
     get '/:locale'   => 'sessions#new',as:"locale" 
     get '/' => redirect("/ja")
     post '/',        to: 'sessions#create'
+    get 'password_resets/new'
+    get 'password_resets/edit'
   scope ":/locale", locale:/en|ja/ do
   # scope '(:locale)', locale: /#{I18n.available_locales.map(&:to_s).join('|')}/ do
     get  '/',        to: 'sessions#new'
@@ -19,6 +14,8 @@ Rails.application.routes.draw do
     get  '/privacy', to: 'static_pages#privacy'
     get  '/term',    to: 'static_pages#term'
     get  '/language',to: 'static_pages#language'
+    get  '/search',  to: 'static_pages#search'
+    get  '/searchresult', to: 'static_pages#searchresult'
     get  '/signup',  to: 'users#new'
     post '/signup',  to: 'users#create'
     delete '/logout',    to: 'sessions#destroy'
