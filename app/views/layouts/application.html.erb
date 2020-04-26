@@ -13,7 +13,7 @@
        // #で始まるアンカーをクリックした場合に処理
        $('a[href^=#]').click(function() {
           // スクロールの速度
-          var speed = 400; // ミリ秒
+          var speed = 500; // ミリ秒
           // アンカーの値取得
           var href= $(this).attr("href");
           // 移動先を取得
@@ -36,6 +36,15 @@
         <% end %>
         <%= yield %>
       </div>
+      <script src="../../assets/javascripts/jquery.min.js"></script>
+      <script>
+        // document.getElementById('scroll_top').addEventListener('click',function(){
+        //   $("html,body").animate({scrollTop:$('#top_page').offset().top - 100});
+        // });
+        document.getElementById('scroll_bottom').addEventListener('click',function(){
+          $("html,body").animate({scrollTop:$('#bottom_page').offset().top});
+        });
+      </script>
     </div>
     <%= render 'layouts/footer' %>
     <%= debug(params) if Rails.env.development? %>
