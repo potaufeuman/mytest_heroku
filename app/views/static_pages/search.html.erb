@@ -5,8 +5,10 @@
     <%= search_form_for @search, url:searchresult_path do |f| %>
       <div class="actions_small">
         <%= f.label :title_cont, "テストのタイトルに含まれる文字列" %>
-        <%= f.search_field :title_cont %>
         <!--title_cont は、titleからの部分検索を可能にする-->
+        <%= f.search_field :title_cont %>
+        <%= f.label :subject_cont, "テストの分野（カテゴリ）に含まれる文字列" %>
+        <%= f.search_field :subject_cont %>
         <%= f.submit ("検索する"), class: "btn btn-primary" %>
       </div>
     <% end %>
