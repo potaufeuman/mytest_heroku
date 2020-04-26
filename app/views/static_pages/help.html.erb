@@ -20,25 +20,15 @@
     <div id="login"><h4><li>ログイン</h4></li></div><br>
     トップページから、メールアドレス、パスワードを入力して「Log in」をクリック<br>
     <br>
-    
     <div id="test"><h4><li>テストを受ける</h4></li></div><br>
-    <% if Rails.env.development? || Rails.env.test? %>
-      <div class="center"><%= image_tag 'Testlist.jpg', size: '700x350'%></div>
-    <% else %>
-      <img src="s3://instapicture/Testlist.jpg">
-    <% end %>
+    <div class="center"><%= image_tag 'Testlist.jpg', size: '700x350'%></div>
     <div class="space"></div>
     ログイン後、サイドメニューの「Test」をクリック<br>
     画面右側に受けられるテストの一覧が表示されます。
     各テストのタイトルをクリックすると、テストの受験画面に進みます。<br>
     <br>
-    
     <div id="create_test"><h4><li>テストを作る</li></h4></div><br>
-    <% if Rails.env.development? || Rails.env.test? %>
-      <div class="center"><%= image_tag 'Create.jpg', size: '700x350'%></div>
-    <% else %>
-      <img src="s3://instapicture/Create.jpg">
-    <% end %>
+    <div class="center"><%= image_tag 'Create.jpg', size: '700x350'%></div>
     <div class="space"></div>
     ログイン後、サイドメニューの「Create」をクリック<br>
     カテゴリ、タイトル名を考えて入力します。<br>
@@ -50,13 +40,11 @@
     画面左側に、問題の選択肢を考えて入力します。
     正解ならばチェックボックスにチェックを入れ、不正解ならチェックは入れずに「Create selects」をクリック。<br>
     <br>
-    
     <div id="grade"><h4><li>成績を見る</h4></li></div><br>
     <div class="center"><%= image_tag 'grade.jpg', size: '700x250'%></div>
     <div class="space"></div>
     過去に受けたテストの結果を見たい時は「Grade」をクリック。<br>
     受けたテストの一覧が画面右側に現れるので、確認したいテストをクリック。<br>
-    <br>
     <br>
     <div id="bottom_page"></div>
   </div>
