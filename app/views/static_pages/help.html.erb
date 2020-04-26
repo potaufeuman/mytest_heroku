@@ -22,12 +22,24 @@
     <br>
     
     <div id="test"><h4><li>テストを受ける</h4></li></div><br>
+    <% if Rails.env.development? || Rails.env.test? %>
+      <div class="center"><%= image_tag 'Testlist.jpg', size: '700x350'%></div>
+    <% else %>
+      <img src="s3://instapicture/Testlist.jpg">
+    <% end %>
+    <div class="space"></div>
     ログイン後、サイドメニューの「Test」をクリック<br>
     画面右側に受けられるテストの一覧が表示されます。
     各テストのタイトルをクリックすると、テストの受験画面に進みます。<br>
     <br>
     
     <div id="create_test"><h4><li>テストを作る</li></h4></div><br>
+    <% if Rails.env.development? || Rails.env.test? %>
+      <div class="center"><%= image_tag 'Create.jpg', size: '700x350'%></div>
+    <% else %>
+      <img src="s3://instapicture/Create.jpg">
+    <% end %>
+    <div class="space"></div>
     ログイン後、サイドメニューの「Create」をクリック<br>
     カテゴリ、タイトル名を考えて入力します。<br>
     画面右側にテストが作成されました。次に、「question」を選択します。<br>
