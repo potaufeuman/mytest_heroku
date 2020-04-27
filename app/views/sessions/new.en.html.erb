@@ -1,0 +1,70 @@
+<% provide(:title, "Top") %>
+<% if logged_in? %>
+  <% provide(:title, @user.name) %>
+  <div class = "row">
+    <%= render "users/side_menu", user: @user %>
+  </div>
+<% else %>
+  <div class="center", id="logo_black"><ol class="white_narrow">
+    Welcome to MyTest!
+  </ol></div>
+  <div class="row">
+    <aside class="col-md-6 white">
+      <!--このサイトは、チームで知識の共有ができているか互いにチェックし合うことを目的に作りました。<br>-->
+      I made this site to be able to check with each other whether the team can share knowledge.<br>
+      <!--ユーザーは、簡単な選択式の問題を作り、仲間とテストを受験し合って知識の共有度合いを測ることができます。<br>-->
+      Users can create simple multiple-choice questions, take tests with peers and measure their knowledge sharing.<br>
+      <br>
+      <!--仕事の研修の定着度合いを測る、<br>-->
+      <!--学校の友達と簡単なテストを出し合う、<br>-->
+      <!--イベントで連絡事項の理解度合いを測る、<br>-->
+      <!--雑学のテストを友達と出し合う、<br>-->
+      Measure the degree of retention of work training,<br>
+      Have a quick test with your school friends,<br>
+      Measure the degree of understanding of the contact items at the event,<br>
+      Have a trivia test with your friends<br>
+      <br>
+      <!--「テスト」といっても怖がる必要はありません。<br>-->
+      <!--楽しんで使いましょう！<br>-->
+      You don't have to be afraid of "test".<br>
+      Have fun and use!<br>
+    </aside>
+    <div class="col-md-6 white">
+      <%= form_for(:session, url: root_path) do |f| %>
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control' %>
+        <%= f.label :password %>
+        <%= link_to t(:"(forgot password)"), new_password_reset_path %>
+        <%= f.password_field :password, class: 'form-control' %>
+        <%= f.label :remember_me, class: "checkbox inline" do %>
+          <%= f.check_box :remember_me %>
+          <span><%= t :"Remember me on this computer" %></span>
+        <% end %>
+        <%= f.submit t(:"Log in"), class: "btn btn-primary" %>
+      <% end %>
+      <b><%= link_to t(:"⇨新しくユーザー登録される方はこちらへ"), signup_path %></b>
+      <div class="space"></div>
+      <%= form_for(:session, url: root_path) do |f| %>
+        <%= f.hidden_field :email, :value => "example@fortune.org" %>
+        <%= f.hidden_field :password, :value => "foobar" %>
+        <%= f.submit t(:"Log in as Trial"), class: "btn btn-primary"%>
+      <% end %>
+    </div>
+  </div>
+  <div class = "space"></div>
+  <div class = "center white">
+    <h4><%= t :現在、以下のようなテストが登録されています %></h4>
+    <ol class="microposts">
+      <% @tests.each do |test| %>
+        <li id="micropost-<%= test.id %>">
+          <%= gravatar_for(test.user, size: 50) %>
+          <span class="content"><%= test.subject %></span>
+          <span class="content"><%= test.title %></span>
+          <span class="timestamp">
+            Create Test <%= time_ago_in_words(test.created_at) %> ago.
+          </span>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+<% end %>
