@@ -1,0 +1,19 @@
+en:
+  分野: subject
+  タイトル: title
+  問題: question
+  選択肢: choices
+  回答者: examinee
+  テスト: test
+  結果: grade
+  あなたの回答: your answer
+  正解: correct!
+  不正解: incorrect
+  正解数: number of correct answers
+  回答数: number of answers
+  正答率: correct answer rate
+# sentence
+  前に回答: ago you answered
+  正解はこちら: correct answer
+  申し訳ありません、  回答データが登録されておりません。: Sorry, the answer data is not registered.
+  しばらく経ってから、再度受験してください。: Please try again after a while.

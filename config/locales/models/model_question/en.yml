@@ -1,26 +1,41 @@
 en:                              ## 言語名
-  dictionary:                    ## 共通系であることを示す
-    title:                       ## 画面のタイトル
-      create: "create"
-      update: "update"
-      destory:
-        confirm: "confirm"
-    message:                     ## 固定メッセージ
-      create:
-        complete: "create success"
-      update:
-        complete: "update success"
-      destory:
-        confirm: "Are you sure？"
-    button:                      ## 表示するボタン
-      login:  "login"
-      Next:   "Next"
-      # create: "新規作成"
-      # search: "検索"
-      # clear: "クリア"
-      # update: "更新"
-      # destory: "削除"
-      # cancel: "キャンセル"
-  time:                          ## 表示する時間の形式
-    formats:
-      default: ! "%Y-%m-%d %H:%M:%S"
+  activerecord:
+    models:
+      user: user
+      admin: admin
+    attributes:
+      question:
+        id: ID
+        分野: subject
+        問題のタイトル: title
+        タイトル: title
+        問題: question
+        ファイルを選択: select the image file
+      admin:
+        id: ID
+        
+  # dictionary:                    ## 共通系であることを示す
+  #   title:                       ## 画面のタイトル
+  #     create: "create"
+  #     update: "update"
+  #     destory:
+  #       confirm: "confirm"
+  #   message:                     ## 固定メッセージ
+  #     create:
+  #       complete: "create success"
+  #     update:
+  #       complete: "update success"
+  #     destory:
+  #       confirm: "Are you sure？"
+  #   button:                      ## 表示するボタン
+  #     login:  "login"
+  #     Next:   "Next"
+  #     # create: "新規作成"
+  #     # search: "検索"
+  #     # clear: "クリア"
+  #     # update: "更新"
+  #     # destory: "削除"
+  #     # cancel: "キャンセル"
+  # time:                          ## 表示する時間の形式
+  #   formats:
+  #     default: ! "%Y-%m-%d %H:%M:%S"

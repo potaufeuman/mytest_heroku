@@ -5,12 +5,12 @@
     <div class="quiz white_block">
       <%= form_for(@question, url: post_answerring_test_question_path(@test.id, @question.id), method: :post) do |f| %>
         <div class="radio_btn">
-          <li>問題（<%= @question_num %>）</li>
+          <li><%= t :問題 %>（<%= @question_num %>）</li>
           <div class="quiz"><%= @question.Q %></div>
           <span class="content">
             <%= image_tag @question.picture.url if @question.picture? %>
           </span>
-          <div class="quiz">選択肢</div>
+          <div class="quiz"><%= t :選択肢 %></div>
           <% for i in 0..@ia do %>
             <%= fields_for @answers[i] do |f_answer| %>
               <%= f_answer.hidden_field :tested_id, :value => @user.id %>

@@ -105,9 +105,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* sidebar */
 .white_wall{
+  // position: fixed;
   background: #fff;
   padding-top: 2%;
   padding-bottom: 20px;
+  padding-left: 50px;
   filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.6));
   font-size: 1.1em;
   font-weight: bold;
@@ -117,6 +119,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #fff;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-left: 50px;
   filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.6));
 }
 
@@ -233,9 +236,20 @@ input {
 }
 
 .radio_btn{
-  // width: 10px;
   float: left;
   margin-right: 50px;
+}
+
+.btn_fix_top{
+  position: fixed;
+  width: 60px;
+  top: 60px;
+}
+
+.btn_fix_bottom{
+  position: fixed;
+  width: 60px;
+  top: 120px;
 }
 
 .quiz{

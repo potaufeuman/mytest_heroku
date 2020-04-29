@@ -3,11 +3,11 @@
   <%= render "users/side_menu", user: @user %>
   <div class="col-md-8  white_block">
     <% if @answers.any? %>
-      <h3>Tests (<%= @tests.count %>)</h3>
+      <h3>Tests you have taken (<%= @tests.count %>)</h3>
       <ol class="microposts">
         <% @tests.each do |test| %>
           <%= link_to tested_test_answers_path(@user.id, test.id), target: :_blank do %>
-            <li><%= t :分野 %>　　：<%= test.subject %></li>
+            <li><%= t :分野 %>：<%= test.subject %></li>
             <li><%= t :タイトル %>：<%= test.title %></li>
           <% end %>
         <% end %>

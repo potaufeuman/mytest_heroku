@@ -6,9 +6,9 @@
   <div class = "menu">
     <%= form_for(test, locale: true) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :"分野" %>
+      <%= f.label :分野 %>
       <%= f.text_field :subject, class: 'form-control' %>
-      <%= f.label :"問題のタイトル" %>
+      <%= f.label :問題のタイトル %>
       <%= f.text_field :title, class: 'form-control' %>
       <%= f.submit "Create Test", class: "btn btn-primary" %>
     <% end %>

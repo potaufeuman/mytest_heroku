@@ -1,0 +1,13 @@
+en:
+  分野: subject
+  タイトル: title
+  問題: question
+  選択肢: choices
+  回答者: examinee
+  テスト: test
+  結果: grade
+# sentence
+  問題を作成中です。: It's in progress.
+  正解が一つも用意されていない問題があります: "There are some questions which have no correct answers."
+  選択肢が用意されていない問題があります: "There are some questions which have no options to answer."
+  問題が一つも用意されていない場合: "There are no questions."

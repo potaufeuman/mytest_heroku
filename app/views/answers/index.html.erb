@@ -1,12 +1,12 @@
 <% provide(:title, 'Result') %>
-<h1><%= yield(:title) %></h1>
+<div class="white_belt"><h1><%= yield(:title) %></h1></div>
 <div class="row white">
   <div class="col-md-6 col-md-offset-3">
     <!--<div class="quiz">-->
-      <h4>回答者　：<%= @user.name %></h4>
-      <h4>分野　　：<%= @test.subject %></h4>
-      <h4>テスト　：<%= @test.title %></h4>
-      <h4>結果　　：</h4>
+      <h4><%= t :回答者 %>：<%= @user.name %></h4>
+      <h4><%= t :分野 %>：<%= @test.subject %></h4>
+      <h4><%= t :テスト %>：<%= @test.title %></h4>
+      <h4><%= t :結果 %>：</h4>
       <div class="microposts">
       <% unless @answers == nil %>
         <% true_count = 0 %><% false_count = 0 %>
@@ -14,22 +14,22 @@
           <% if answer.tested_id == @user.id%>
             <% if answer.select_A == 1 %>
               <% question_A = Question.find(answer.question_id) %>
-              <li>問題 （<%=Question.where(test_id: question_A.test_id).index(question_A)+1%>）
+              <li><%= t :問題 %> （<%=Question.where(test_id: question_A.test_id).index(question_A)+1%>）
               <%= question_A.Q %></li>
-              <li>あなたの回答：<%= Select.find(answer.select_id).content %>
+              <li><%= t :あなたの回答 %>：<%= Select.find(answer.select_id).content %>
               <span class="timestamp">
-                <%= time_ago_in_words(answer.created_at) %> 前に回答
+                <%= time_ago_in_words(answer.created_at) %> <%= t :前に回答 %>
                 <% if current_user?(@user) %>
                   <%= link_to "delete", tested_test_answer_path(answer.tested_id, id: answer.id),
                                         method: :delete, data: { confirm: "You sure?" } %>
                 <% end %>
               </span></li>
               <% if answer.select_id == question_A.selects.find_by(judge: 1).id %>
-                <div class="true">正解</div>
+                <div class="true"><%= t :正解 %></div>
                 <% true_count += 1%>
               <% else %>
-                <div class="false">不正解</div>
-                <div class="tell_right">正解：<%= question_A.selects.find_by(judge: 1).content %></div>
+                <div class="false"><%= t :不正解 %></div>
+                <div class="tell_right"><%= t :正解はこちら %>：<%= question_A.selects.find_by(judge: 1).content %></div>
                 <% false_count += 1%>
               <% end %>
             <% end %>
@@ -39,15 +39,15 @@
         <div class="stats">
           <table>
             <h4>
-              <tr><th>正解数</th><td><%= true_count %></td></tr>
-              <tr><th>回答数</th><td><%= @answer_count %></td></tr>
-              <tr><th>正答率</th><td><%= @true_ratio %> %</td></tr>
+              <tr><th><%= t :正解数 %></th><td><%= true_count %></td></tr>
+              <tr><th><%= t :回答数 %></th><td><%= @answer_count %></td></tr>
+              <tr><th><%= t :正答率 %></th><td><%= @true_ratio %> %</td></tr>
             </h4>
           </table>
         </div>
       <% else %>
-        申し訳ありません、回答データが登録されておりません。<br>
-        しばらく経ってから、再度受験してください。
+        <%= t :申し訳ありません、回答データが登録されておりません。 %><br>
+        <%= t :しばらく経ってから、再度受験してください。 %>
       <% end %>
     </div>
   </div>

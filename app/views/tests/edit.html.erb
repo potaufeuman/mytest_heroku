@@ -1,16 +1,14 @@
-<aside class = "col-md-4">
-  <section = "user_info">
-    <%= gravatar_for @user, size: 50 %>
-    <%= @user.name %>
-  </section>
-  <div class = "menu">
+<% provide(:title, "TestList") %>
+<div class = "row">
+  <%= render "users/side_menu", user: @user %>
+  <div class="col-md-8 white_block">
     <%= form_for(@test, locale: true) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :"カテゴリ" %>
+      <%= f.label :"分野" %>
       <%= f.text_field :subject, class: 'form-control' %>
       <%= f.label :"問題のタイトル" %>
       <%= f.text_field :title, class: 'form-control' %>
       <%= f.submit "Edit Test", class: "btn btn-primary" %>
     <% end %>
   </div>
-</aside>
+</div>

@@ -1,9 +1,9 @@
 <% provide(:title, @user.name) %>
 <div class = "row">
   <%= render "side_menu", user: @user %>
-  <div class="col-md-8 white">
+  <div class="col-md-8 white_block">
     <% if @user.tests.any? %>
-      <h3>Tests (<%= @user.tests.count %>)</h3>
+      <h3>Tests you created (<%= @user.tests.count %>)</h3>
       <ol class="microposts">
         <%= render @tests, user: @user  %>
       </ol>

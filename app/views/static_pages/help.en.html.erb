@@ -1,0 +1,80 @@
+<% provide(:title, "Help") %>
+<div class="white_belt"><h1><%= yield(:title) %></h1></div>
+<div class="row">
+  <div class="col-md-4 white_wall">
+    <!--サイドメニューは縦に動かないようにしたい-->
+    <li><a href="#signup"><%= t :ユーザー情報を登録 %></a></li>
+    <li><a href="#login"><%= t :ログイン %></a></li>
+    <li><a href="#test"><%= t :テストを受ける %></a></li>
+    <li><a href="#create_test"><%= t :テストを作る %></a></li>
+    <li><a href="#grade"><%= t :成績を見る %></a></li>
+  </div>
+  <div class="col-md-8 white_block">
+    <div id="signup"><h4><li><%= t :ユーザー情報を登録 %></li></h4></div><br>
+    <div class="center">
+      <%= image_tag 'signup.png', size: '700x350'%>
+    </div>
+    <div class="space"></div>
+    Click "⇨New user? Let's sign up!"<br>
+    And please enter your name, email-address, password on the signup page.<br>
+    If you click "Signup" button, the confirmation email will be sent to your address.<br>
+    Signup will be completed, if you click the email link.<br>
+    <br>
+    <div id="login"><h4><li><%= t :ログイン %></h4></li></div><br>
+    <div class="center">
+      <%= image_tag 'login.png', size: '700x350'%>
+    </div>
+    <div class="space"></div>
+    Enter your email address and password, and click "Log in" on the top page.<br>
+    <br>
+    <div id="test"><h4><li><%= t :テストを受ける %></h4></li></div><br>
+    <div class="center">
+      <%= image_tag 'Testlist.jpg', size: '700x350'%>
+    </div>
+    <div class="space"></div>
+    After logged in, click "test" on the side menu.<br>
+    Then you can see the tests lit on the right side of the page.<br>
+    If you click The title of tests, you will see the taking test page.<br>
+    <!--ログイン後、サイドメニューの「Test」をクリック<br>-->
+    <!--画面右側に受けられるテストの一覧が表示されます。<br>-->
+    <!--各テストのタイトルをクリックすると、テストの受験画面に進みます。<br>-->
+    <br>
+    <div id="create_test"><h4><li><%= t :テストを作る %></li></h4></div><br>
+    <div class="center">
+      <%= image_tag 'Create.jpg', size: '700x350'%>
+    </div>
+    <div class="space"></div>
+    Ahter logged in, click "Create" on the side menu.<br>
+    Enter the category and title.<br>
+    Then you can see the test title on the right side.<br>
+    Please click "question", next.<br>
+    <!--ログイン後、サイドメニューの「Create」をクリック<br>-->
+    <!--カテゴリ、タイトル名を考えて入力します。<br>-->
+    <!--画面右側にテストが作成されました。次に、「question」を選択します。<br>-->
+    <br>
+    Please enter the question on the left side form.<br>
+    Click "create question".<br>
+    And you will see the question on the right side.<br>
+    Then, click "create selects".<br>
+    <!--画面左側に、問題文を考えて入力します。「create question」をクリック。<br>-->
+    <!--画面右側に問題が作成されました。次に、「create selects」を選択します。<br>-->
+    <br>
+    Please enter the problem options on the left side of the page.<br>
+    If the option is correct answer, check the check box.<br>
+    If the option is incorrect answer, leave it unchecked and click "Create selects".<br>
+    <!--画面左側に、問題の選択肢を考えて入力します。-->
+    <!--正解ならばチェックボックスにチェックを入れ、不正解ならチェックは入れずに「Create selects」をクリック。<br>-->
+    <br>
+    <div id="grade"><h4><li><%= t :成績を見る %></h4></li></div><br>
+    <div class="center">
+      <%= image_tag 'grade.jpg', size: '700x250'%>
+    </div>
+    <div class="space"></div>
+    Click "Grade" to see the results of the tests you have taken in the past.<br>
+    A list of the tests you took will appear on the right side of the page.<br>
+    And click the test you want to check.<br>
+    <!--過去に受けたテストの結果を見たい時は「Grade」をクリック。<br>-->
+    <!--受けたテストの一覧が画面右側に現れるので、確認したいテストをクリック。<br>-->
+    <br>
+  </div>
+</div>

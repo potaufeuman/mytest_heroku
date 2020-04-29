@@ -39,26 +39,15 @@ en:                              ## 言語名
   time:                          ## 表示する時間の形式
     formats:
       default: ! "%Y-%m-%d %H:%M:%S"
-      
-  # dictionary:                    ## 共通系であることを示す
-  #   title:                       ## 画面のタイトル
-  #     create: "create"
-  #     update: "update"
-  #     destory:
-  #       confirm: "confirm"
-  #   message:                     ## 固定メッセージ
-  #     create:
-  #       complete: "create success"
-  #     update:
-  #       complete: "update success"
-  #     destory:
-  #       confirm: "Are you sure？"
-  #   button:                      ## 表示するボタン
-  #     Log in:  "Log in"
-  #     Next:   "Next"
-  #     # create: "新規作成"
-  #     # search: "検索"
-  #     # clear: "クリア"
-  #     # update: "更新"
-  #     # destory: "削除"
-  #     # cancel: "キャンセル"
+# search
+  "テストのタイトルに含まれる文字列": texts involved in test titles
+  "テストの分野（カテゴリ）に含まれる文字列": texts involved in test subjects
+  "検索する": search
+# selects
+  分野: subject
+  タイトル: title
+  問題: question
+  正解なら、チェックを入れてください: If the option is correct answer, check the check-box.
+# take a test
+  問題数: number of questions
+  選択肢: options
