@@ -54,3 +54,6 @@ ja:                              ## 言語名
   time:                          ## 表示する時間の形式
     formats:
       default: ! "%Y-%m-%d %H:%M:%S"
+# user_mailer :
+# account_activation mail
+  subject : "%{ user }, こちらからアカウントを有効化してください"

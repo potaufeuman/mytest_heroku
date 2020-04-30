@@ -51,3 +51,6 @@ en:                              ## 言語名
 # take a test
   問題数: number of questions
   選択肢: options
+# user_mailer :
+# account_activation mail
+  subject : "%{ user }, account activation"
