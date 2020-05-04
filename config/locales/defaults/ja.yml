@@ -12,6 +12,7 @@ ja:                              ## 言語名
     confirm: "削除しますか？"
 ## 表示するボタン
   Log in: "ログイン"
+  Log out: "ログアウト"
   Next:   "次へ"
   create: "新規作成"
   search: "検索"
@@ -26,6 +27,10 @@ ja:                              ## 言語名
   Email: "メールアドレス"
   Password: "パスワード"
   Sign up: "ユーザー登録"
+  Users: "ユーザー一覧"
+  Account: "アカウント"
+  Settings: "設定"
+  Profile: "プロフィール"
 ##文章
   "forgot password": "パスワードを忘れた時はこちら"
   "Remember me on this computer": "パスワードを記憶する"
