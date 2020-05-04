@@ -3,7 +3,7 @@
 <div class="row white_block">
   <%= render 'create_select', user: @user, test: @test, question: @question, select: @select %>
   <% if @user.tests.any? %>
-    <div class="col-md-8">
+    <div class="col-md-7">
       <div class="center"><h4><%= t :分野 %>：<%= @test.subject %></h4></div>
       <div class="center"><h4><%= t :タイトル %>：<%= @test.title %></h4></div>
       <% @test.questions.each_with_index do |question, i| %>
@@ -24,9 +24,6 @@
         <% end %>
         <div align="right">
           <%= link_to "create select", new_test_question_select_path(@test, question) %>
-          <!--= link_to "edit select", edit_test_question_select_path(@test, question) %>-->
-          <!--= link_to "delete select", test_question_select_path(@test, question, select),-->
-          <!--                      method: :delete, data: { confirm: "You sure?"} %>-->
         </div>
       <% end %>
       <%= link_to new_test_question_path(@test) do %>

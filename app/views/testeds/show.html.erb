@@ -1,7 +1,7 @@
 <% provide(:title, "Grade") %>
 <div class = "row">
   <%= render "users/side_menu", user: @user %>
-  <div class="col-md-8  white_block">
+  <div class="col-md-7  white_block">
     <% if @answers.any? %>
       <h3>Tests you have taken (<%= @tests.count %>)</h3>
       <ol class="microposts">

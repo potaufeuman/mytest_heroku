@@ -10,26 +10,18 @@
   </ol></div>
   <div class="row">
     <aside class="col-md-6 white">
-      <!--このサイトは、チームで知識の共有ができているか互いにチェックし合うことを目的に作りました。<br>-->
       I made this site to be able to check with each other whether the team can share knowledge.<br>
-      <!--ユーザーは、簡単な選択式の問題を作り、仲間とテストを受験し合って知識の共有度合いを測ることができます。<br>-->
       Users can create simple multiple-choice questions, take tests with peers and measure their knowledge sharing.<br>
       <br>
-      <!--仕事の研修の定着度合いを測る、<br>-->
-      <!--学校の友達と簡単なテストを出し合う、<br>-->
-      <!--イベントで連絡事項の理解度合いを測る、<br>-->
-      <!--雑学のテストを友達と出し合う、<br>-->
       Measure the degree of retention of work training,<br>
       Have a quick test with your school friends,<br>
       Measure the degree of understanding of the contact items at the event,<br>
       Have a trivia test with your friends<br>
       <br>
-      <!--「テスト」といっても怖がる必要はありません。<br>-->
-      <!--楽しんで使いましょう！<br>-->
       You don't have to be afraid of "test".<br>
       Have fun and use!<br>
     </aside>
-    <div class="col-md-6 white">
+    <div class="col-md-5 white">
       <%= form_for(:session, url: root_path) do |f| %>
         <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control' %>

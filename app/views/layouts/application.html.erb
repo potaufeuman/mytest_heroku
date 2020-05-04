@@ -28,15 +28,13 @@
     </script>
   </head>
   <body>
-    <div id="top_page"></div>
+    <div id="top_page"></div> <!-- 画面トップへのスクロール用 -->
     <%= render 'layouts/header' %>
-    <div class = "silent_blue">
-      <div class = "container">
-        <% flash.each do |message_type, message| %>
-          <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-        <% end %>
-        <%= yield %>
-      </div>
+    <div class = "container">
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
+      <%= yield %>
     </div>
     <div id="bottom_page"></div>
     <%= render 'layouts/footer' %>

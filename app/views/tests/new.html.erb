@@ -1,7 +1,7 @@
 <% provide(:title, 'Create Test') %>
 <div class="row">
   <%= render 'create_test', user: @user, test: @test %>
-  <div class="col-md-8 white_block">
+  <div class="col-md-7 white_block">
     <% if @user.tests.any? %>
       <h3>Your Created Tests (<%= @user.tests.count %>)</h3>
       <%= will_paginate @mytests %>
