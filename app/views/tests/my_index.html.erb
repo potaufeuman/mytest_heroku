@@ -3,7 +3,7 @@
   <%= render "users/side_menu", user: @user %>
   <div class="col-md-7 white_block">
     <% if @user.tests.any? %>
-      <h3>Tests you created (<%= @user.tests.count %>)</h3>
+      <h4>Tests you created (<%= @user.tests.count %>)</h4>
       <%= will_paginate @mytests %>
       <ol class="microposts">
       <% @mytests.each do |mytest| %>

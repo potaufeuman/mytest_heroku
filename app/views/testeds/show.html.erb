@@ -3,7 +3,7 @@
   <%= render "users/side_menu", user: @user %>
   <div class="col-md-7  white_block">
     <% if @answers.any? %>
-      <h3>Tests you have taken (<%= @tests.count %>)</h3>
+      <h4>Tests you have taken (<%= @tests.count %>)</h4>
       <ol class="microposts">
         <% @tests.each do |test| %>
           <%= link_to tested_test_answers_path(@user.id, test.id), target: :_blank do %>

@@ -3,7 +3,7 @@
     <%= gravatar_for user, size: 50 %>
     <%= user.name %>
   </section>
-  <div class = "menu">
+  <div class = "quiz">
     <%= form_for(question, url: { action: :create }) do |f| %>
       <%= f.label :問題 %>
       <%= f.text_area :Q, class: 'form-control', size: "30x6" %>

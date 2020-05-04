@@ -2,8 +2,8 @@
 <div class="white_belt"><h1><%= yield(:title) %></h1></div>
 <div class="row white">
   <div class="col-md-6 col-md-offset-3">
-    <h3><%= t :分野 %>：<%= @test.subject %></h3>
-    <h3><%= t :タイトル %>：<%= @test.title %></h3>
+    <h4><%= t :分野 %>：<%= @test.subject %></h4>
+    <h4><%= t :タイトル %>：<%= @test.title %></h4>
     <% if @test.questions.any? %>
       <% validate_count = 0 %><% i_question = 0 %>
       <% validate_select = 0 %><% i_select = 0 %>
@@ -18,7 +18,7 @@
         <% validate_select_count += 1 unless validate_select == 0 %>
       <% end %>
       <% if validate_count == i_question %>
-        <h3><%= t :問題数 %>：<%= i_question %></h3>
+        <h4><%= t :問題数 %>：<%= i_question %></h4>
         <% if validate_select_count == i_select %>
           <%= link_to answerring_test_question_path(@test, @first_question) do %>
             <div class="space center">

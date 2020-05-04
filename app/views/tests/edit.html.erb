@@ -1,14 +1,17 @@
-<% provide(:title, "TestList") %>
+<% provide(:title, "Edit test") %>
 <div class = "row">
   <%= render "users/side_menu", user: @user %>
   <div class="col-md-7 white_block">
+    <h4>Edit test</h4>
     <%= form_for(@test, locale: true) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :"分野" %>
-      <%= f.text_field :subject, class: 'form-control' %>
-      <%= f.label :"問題のタイトル" %>
-      <%= f.text_field :title, class: 'form-control' %>
-      <%= f.submit "Edit Test", class: "btn btn-primary" %>
+      <div class="actions_small">
+        <%= render 'shared/error_messages', object: f.object %>
+        <%= f.label :"分野" %>
+        <%= f.text_field :subject, class: 'form-control' %>
+        <%= f.label :"問題のタイトル" %>
+        <%= f.text_field :title, class: 'form-control' %>
+        <%= f.submit "Edit Test", class: "btn btn-primary" %>
+      </div>
     <% end %>
   </div>
 </div>

@@ -2,7 +2,7 @@
 <div class = "row">
   <%= render "users/side_menu", user: @user %>
   <div class="col-md-7 white_block">
-    <h3>Tests (<%= @tests.count %>)</h3>
+    <h4>Tests (<%= @tests.count %>)</h4>
     <%= will_paginate @tests %>
     <ol class="microposts">
       <%= render @tests  %>

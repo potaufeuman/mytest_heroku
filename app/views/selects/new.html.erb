@@ -1,15 +1,15 @@
-<% provide(:title, 'Create Question') %>
+<% provide(:title, 'Create Selection') %>
 <div class="white_belt"><h1><%= yield(:title) %></h1></div>
-<div class="row white_block">
+<div class="row">
   <%= render 'create_select', user: @user, test: @test, question: @question, select: @select %>
   <% if @user.tests.any? %>
-    <div class="col-md-7">
+    <div class="col-md-7 white_block">
       <div class="center"><h4><%= t :分野 %>：<%= @test.subject %></h4></div>
       <div class="center"><h4><%= t :タイトル %>：<%= @test.title %></h4></div>
       <% @test.questions.each_with_index do |question, i| %>
         <div class="microposts">
           <li><%= t :問題 %>（<%= i+1 %>）</li>
-          <h4><%= question.Q %></h4>
+          <%= question.Q %><br>
         </div>
         <div align="right">
           <%= link_to "delete question", test_question_path(@test,question),
@@ -23,7 +23,7 @@
           </div>
         <% end %>
         <div align="right">
-          <%= link_to "create select", new_test_question_select_path(@test, question) %>
+          <%= link_to "create selection", new_test_question_select_path(@test, question) %>
         </div>
       <% end %>
       <%= link_to new_test_question_path(@test) do %>

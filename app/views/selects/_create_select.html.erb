@@ -1,18 +1,19 @@
-<aside class = "col-md-4">
+<aside class = "col-md-4 white_block">
   <section = "user_info">
     <%= gravatar_for user, size: 50 %>
     <%= user.name %>
   </section>
-  <div class = "menu">
+  <div class = "quiz">
     <%= form_for select, url: test_question_selects_path(test, question) do |f| %>
-      <li><%= t :分野 %>：<%= test.subject %></li>
-      <li><%= t :タイトル %>：<%= test.title %></li>
-      <h5><%= t :問題 %>：</h5>
-      <%= question.Q %>
+      <%= t :分野 %>：　<%= test.subject %><br>
+      <%= t :タイトル %>：　<%= test.title %><br>
+      <%= t :問題 %>：　<%= question.Q %><br>
+      <br>
+      <%= f.label :質問 %>
       <%= f.text_area :content %>
         <div class= "sidemenu_box"><%= f.check_box :judge %></div>
         <div class= "right"><%= t :正解なら、チェックを入れてください %></div>
-      <%= f.submit "Create Select", class: "btn btn-primary" %>
+      <%= f.submit "Create Selection", class: "btn btn-primary" %>
     <% end %>
   </div>
 </aside>
