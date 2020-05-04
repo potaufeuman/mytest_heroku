@@ -5,9 +5,9 @@
     <%= render "users/side_menu", user: @user %>
   </div>
 <% else %>
-  <div class="center", id="logo_black"><ol class="white_narrow">
+  <div class="center white_belt", id="logo_black">
     Welcome to MyTest!
-  </ol></div>
+  </div>
   <div class="row">
     <aside class="col-md-6 white">
       このサイトは、チームで知識の共有ができているか互いにチェックし合うことを目的に作りました。<br>
@@ -35,7 +35,7 @@
         <%= f.submit t(:"Log in"), class: "btn btn-primary" %>
       <% end %>
       <b><%= link_to t(:"⇨新しくユーザー登録される方はこちらへ"), signup_path %></b>
-      <div class="space"></div>
+      <div class="space-bottom-20"></div>
       <%= form_for(:session, url: root_path) do |f| %>
         <%= f.hidden_field :email, :value => "example@fortune.org" %>
         <%= f.hidden_field :password, :value => "foobar" %>

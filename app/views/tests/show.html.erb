@@ -18,10 +18,12 @@
         <% validate_select_count += 1 unless validate_select == 0 %>
       <% end %>
       <% if validate_count == i_question %>
-        <h4><%= t :問題数 %>：<%= i_question %></h4>
+        <h3><%= t :問題数 %>：<%= i_question %></h3>
         <% if validate_select_count == i_select %>
           <%= link_to answerring_test_question_path(@test, @first_question) do %>
-            <div class="btn btn-primary", "center">Getting started</div>
+            <div class="space center">
+              <div class="btn btn-primary">Getting started</div>
+            </div>
           <% end %>
         <% else %>
           <div class="center">

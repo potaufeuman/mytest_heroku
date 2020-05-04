@@ -7,8 +7,10 @@
       <ol class="microposts">
         <% @tests.each do |test| %>
           <%= link_to tested_test_answers_path(@user.id, test.id), target: :_blank do %>
-            <li><%= t :分野 %>：<%= test.subject %></li>
-            <li><%= t :タイトル %>：<%= test.title %></li>
+            <li>
+              <span class="content"><%= t :分野 %>：<%= test.subject %></span>
+              <span class="content"><%= t :タイトル %>：<%= test.title %></span>
+            </li>
           <% end %>
         <% end %>
       </ol>

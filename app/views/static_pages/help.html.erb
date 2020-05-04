@@ -2,7 +2,6 @@
 <div class="white_belt"><h1><%= yield(:title) %></h1></div>
 <div class="row">
   <div class="col-md-4 white_wall">
-    <!--サイドメニューは縦に動かないようにしたい-->
     <li><a href="#signup"><%= t :ユーザー情報を登録 %></a></li>
     <li><a href="#login"><%= t :ログイン %></a></li>
     <li><a href="#test"><%= t :テストを受ける %></a></li>
@@ -10,37 +9,41 @@
     <li><a href="#grade"><%= t :成績を見る %></a></li>
   </div>
   <div class="col-md-8 white_block">
-    <div id="signup"><h4><li>ユーザー情報を登録</li></h4></div><br>
+    <div id="signup"><h4><li>ユーザー情報を登録</li></h4></div>
+    <br>
     <div class="center">
       <%= image_tag 'signup.png', size: '700x350'%>
     </div>
-    <div class="space"></div>
+    <br>
     「⇨新しくユーザー登録される方はこちらへ」をクリック<br>
     Signup画面に、お名前、メールアドレスを入力し、パスワードを決めて入力してください。<br>
     「Signup」ボタンを押すと、入力したメールアドレスに確認のメールが送信されます。<br>
-    届いたメールのリンク箇所をクリックすると、ユーザー登録が完了します。<br>
+    届いたメールのリンク箇所をクリックすると、ユーザー登録が完了します。
+    <div class="space"></div>
+    <div id="login"><h4><li>ログイン</h4></li></div>
     <br>
-    <div id="login"><h4><li>ログイン</h4></li></div><br>
     <div class="center">
       <%= image_tag 'login.png', size: '700x350'%>
     </div>
-    <div class="space"></div>
-    トップページから、メールアドレス、パスワードを入力して「Log in」をクリック<br>
     <br>
-    <div id="test"><h4><li>テストを受ける</h4></li></div><br>
+    トップページから、メールアドレス、パスワードを入力して「Log in」をクリック<br>
+    <div class="space"></div>
+    <div id="test"><h4><li>テストを受ける</h4></li></div>
+    <br>
     <div class="center">
       <%= image_tag 'Testlist.jpg', size: '700x350'%>
     </div>
-    <div class="space"></div>
+    <br>
     ログイン後、サイドメニューの「Test」をクリック<br>
     画面右側に受けられるテストの一覧が表示されます。<br>
     各テストのタイトルをクリックすると、テストの受験画面に進みます。<br>
+    <div class="space"></div>
+    <div id="create_test"><h4><li>テストを作る</li></h4></div>
     <br>
-    <div id="create_test"><h4><li>テストを作る</li></h4></div><br>
     <div class="center">
       <%= image_tag 'Create.jpg', size: '700x350'%>
     </div>
-    <div class="space"></div>
+    <br>
     ログイン後、サイドメニューの「Create」をクリック<br>
     カテゴリ、タイトル名を考えて入力します。<br>
     画面右側にテストが作成されました。次に、「question」を選択します。<br>
@@ -49,15 +52,16 @@
     画面右側に問題が作成されました。次に、「create selects」を選択します。<br>
     <br>
     画面左側に、問題の選択肢を考えて入力します。
-    正解ならばチェックボックスにチェックを入れ、不正解ならチェックは入れずに「Create selects」をクリック。<br>
+    正解ならばチェックボックスにチェックを入れ、不正解ならチェックは入れずに「Create selects」をクリック。
+    <div class="space"></div>
+    <div id="grade"><h4><li>成績を見る</h4></li></div>
     <br>
-    <div id="grade"><h4><li>成績を見る</h4></li></div><br>
     <div class="center">
       <%= image_tag 'grade.jpg', size: '700x250'%>
     </div>
     <div class="space"></div>
     過去に受けたテストの結果を見たい時は「Grade」をクリック。<br>
     受けたテストの一覧が画面右側に現れるので、確認したいテストをクリック。<br>
-    <br>
+    <div class="space"></div>
   </div>
 </div>

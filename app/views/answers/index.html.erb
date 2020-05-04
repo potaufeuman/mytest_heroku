@@ -1,13 +1,13 @@
 <% provide(:title, 'Result') %>
 <div class="white_belt"><h1><%= yield(:title) %></h1></div>
 <div class="row white">
-  <div class="col-md-6 col-md-offset-3">
-    <!--<div class="quiz">-->
-      <h4><%= t :回答者 %>：<%= @user.name %></h4>
-      <h4><%= t :分野 %>：<%= @test.subject %></h4>
-      <h4><%= t :テスト %>：<%= @test.title %></h4>
-      <h4><%= t :結果 %>：</h4>
-      <div class="microposts">
+  <div class="col-md-8 col-md-offset-2">
+    <table align="center">
+      <h4><tr><th><%= t :回答者 %></th><td><%= @user.name %></td></tr></h4>
+      <h4><tr><th><%= t :分野 %></th><td><%= @test.subject %></td></tr></h4>
+      <h4><tr><th><%= t :テスト %></th><td><%= @test.title %></td></tr></h4>
+    </table>
+    <div class="microposts">
       <% unless @answers == nil %>
         <% true_count = 0 %><% false_count = 0 %>
         <% @answers.each_with_index do |answer, i| %>
@@ -34,17 +34,16 @@
               <% end %>
             <% end %>
           <% end %>
+          <div class="space"></div>
         <% end %>
         <% stats(true_count, false_count) %>
-        <div class="stats">
-          <table>
-            <h4>
-              <tr><th><%= t :正解数 %></th><td><%= true_count %></td></tr>
-              <tr><th><%= t :回答数 %></th><td><%= @answer_count %></td></tr>
-              <tr><th><%= t :正答率 %></th><td><%= @true_ratio %> %</td></tr>
-            </h4>
-          </table>
-        </div>
+        <table align="center">
+          <h4>
+            <tr><th><%= t :正解数 %></th><td><%= true_count %></td></tr>
+            <tr><th><%= t :回答数 %></th><td><%= @answer_count %></td></tr>
+            <tr><th><%= t :正答率 %></th><td><%= @true_ratio %> %</td></tr>
+          </h4>
+        </table>
       <% else %>
         <%= t :申し訳ありません、回答データが登録されておりません。 %><br>
         <%= t :しばらく経ってから、再度受験してください。 %>
