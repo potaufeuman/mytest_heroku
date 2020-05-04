@@ -43,7 +43,7 @@
         <%= f.submit t(:"Log in"), class: "btn btn-primary" %>
       <% end %>
       <b><%= link_to t(:"⇨新しくユーザー登録される方はこちらへ"), signup_path %></b>
-      <div class="space"></div>
+      <div class="space-bottom-20"></div>
       <%= form_for(:session, url: root_path) do |f| %>
         <%= f.hidden_field :email, :value => "example@fortune.org" %>
         <%= f.hidden_field :password, :value => "foobar" %>

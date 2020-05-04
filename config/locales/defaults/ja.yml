@@ -24,7 +24,8 @@ ja:                              ## 言語名
   Help: "使い方"
   Language: "言語"
   Email: "メールアドレス"
-  "Password": "パスワード"
+  Password: "パスワード"
+  Sign up: "ユーザー登録"
 ##文章
   "forgot password": "パスワードを忘れた時はこちら"
   "Remember me on this computer": "パスワードを記憶する"
