@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+「MyTest」について
 
-Things you may want to cover:
+説明
+このWebアプリケーションは、オンライン上で選択式のテストを作成し、他の人がそのテストを受講できるようにするためのものです。
+主に、以下のような機能を備えています。
+・各テストには、好きな数だけ問題を設定できます。
+・各設問には、好きな数だけ選択肢を用意できます。
+・テストを受講すると、自動で採点されます。
+・テストを、タイトルや分類から検索することができます。
+・テストを作成したり受講するには、ユーザー登録が必要になります。
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+開発環境
+・AWS
+・Ruby on Rails (ruby 2.6.3)
+・postgreSQL
+・Rspec
+・Heroku
