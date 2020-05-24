@@ -1,6 +1,5 @@
-# README
-
 「MyTest」について
+<a href="https://mytest-learn-0to1.herokuapp.com/">https://mytest-learn-0to1.herokuapp.com/</a>
 
 説明
 このWebアプリケーションは、オンライン上で選択式のテストを作成し、他の人がそのテストを受講できるようにするためのものです。
@@ -11,9 +10,14 @@
 ・テストを、タイトルや分類から検索することができます。
 ・テストを作成したり受講するには、ユーザー登録が必要になります。
 
+「お試しでログイン」ボタンより、ゲストユーザーとして各種機能をお試しいただけます。
+
 開発環境
-・AWS
-・Ruby on Rails (ruby 2.6.3)
+・AWS(Cloud9, S3)
+・Ruby on Rails
+  (Ruby 2.6.3)
+  (Rails 5.1.6)
 ・postgreSQL
+・Bootstrap
 ・Rspec
 ・Heroku
