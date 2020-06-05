@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # log_in @user
+      # log_in @user　activationを使わないケース
       # flash[:success] = "Welcome to MyTest!"
       # redirect_to @user
       @user.send_activation_email

@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
     FactoryBot.create(:user, email: "aaron@example.com")
     user = FactoryBot.build(:user, email: "Aaron@example.com")
     user.valid?
-    expect(user.errors[:email]).to include("has already been taken")
+    expect(user.errors[:email]).to include("はすでに存在します")
   end
 
   describe "メールアドレスの有効性" do
@@ -53,7 +53,7 @@ RSpec.describe User, type: :model do
     scenario "一致しない場合" do
       user = FactoryBot.build(:user, password: "password", password_confirmation: "different")
       user.valid?
-      expect(user.errors[:password_confirmation]).to include("doesn't match Password")
+      expect(user.errors[:password_confirmation]).to include("とPasswordの入力が一致しません")
     end
   end
 end

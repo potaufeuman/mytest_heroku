@@ -21,7 +21,7 @@ RSpec.feature 'ログイン' do
     visit root_path
     fill_in "Email", with: "example@fortune.org"
     fill_in "Password", with: "foobar"
-    click_button "Log in"
-    expect(page).to have_content "Create"
+    click_button "ログイン"
+    expect(page).to have_content "新規作成"
   end
 end
