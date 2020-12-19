@@ -106,13 +106,12 @@ header {
   color: #fff;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
-}
-
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
+  // background-image: url("../images/mytest.png");
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 #logo_black {
