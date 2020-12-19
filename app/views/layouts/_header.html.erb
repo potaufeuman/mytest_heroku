@@ -1,8 +1,10 @@
-<header class="navbar navbar-fixed-top navbar-inverse navbar-expand-sm mt-3 mb-3">
+<header class="navbar navbar-fixed-top navbar-light navbar-expand-sm mt-3 mb-3" 
+ style="background-color:#fff; box-shadow:0 2px rgba(0,0,0,0.4);">
   <button id='scroll_top' class="btn_fix_top btn-lg btn-primary">▲</button>
   <button id='scroll_bottom' class="btn_fix_bottom btn-lg btn-primary">▼</button>
   <div class="container">
-    <%= link_to "MyTest", root_path, id: "logo" %>
+    <%= link_to "", root_path, id: "logo" %>
+    <a class="navbar-nav" href="/"><%= image_tag 'mytest.png', size: '120x48'%></a>
     <nav class="pc-nav">
       <ul class="nav navbar-nav navbar-right">
         <%= render 'layouts/header_menu' %>

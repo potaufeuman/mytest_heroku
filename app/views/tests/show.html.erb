@@ -5,9 +5,11 @@
     <h4><%= t :分野 %>：<%= @test.subject %></h4>
     <h4><%= t :タイトル %>：<%= @test.title %></h4>
     <% if @test.questions.any? %>
-      <% validate_count = 0 %><% i_question = 0 %>
-      <% validate_select = 0 %><% i_select = 0 %>
-      <% validate_select_count = 0 %>
+      <% validate_count = 0 %>  <!-- 選択肢がある問題数 -->
+      <% i_question = 0 %>  <!-- 問題数 -->
+      <% validate_select = 0 %>  <!-- 正解の数 -->
+      <% i_select = 0 %>  <!-- 選択肢の数 -->
+      <% validate_select_count = 0 %>  <!-- 正解がある問題の数 -->
       <% @questions.each_with_index do |question, i| %>
         <% validate_count += 1 if question.selects.any? %>
         <% i_question = i+1 %>
@@ -19,7 +21,7 @@
       <% end %>
       <% if validate_count == i_question %>
         <h4><%= t :問題数 %>：<%= i_question %></h4>
-        <% if validate_select_count == i_select %>
+        <% if validate_select_count == i_question %>
           <%= link_to answerring_test_question_path(@test, @first_question) do %>
             <div class="space center">
               <div class="btn btn-primary">Getting started</div>
