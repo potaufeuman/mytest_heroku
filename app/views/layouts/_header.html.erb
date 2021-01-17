@@ -1,22 +1,53 @@
-<header class="navbar navbar-fixed-top navbar-light navbar-expand-sm mt-3 mb-3" 
- style="background-color:#fff; box-shadow:0 2px rgba(0,0,0,0.4);">
+<header class="navbar navbar-expand-md navbar-light sticky-top"
+  style="background-color:#fff; box-shadow:0 2px rgba(0,0,0,0.4);">
   <button id='scroll_top' class="btn_fix_top btn-lg btn-primary">▲</button>
   <button id='scroll_bottom' class="btn_fix_bottom btn-lg btn-primary">▼</button>
   <div class="container">
     <%= link_to "", root_path, id: "logo" %>
-    <a class="navbar-nav" href="/"><%= image_tag 'mytest.png', size: '120x48'%></a>
-    <nav class="pc-nav">
-      <ul class="nav navbar-nav navbar-right">
-        <%= render 'layouts/header_menu' %>
+    <a class="navbar-brand" href="/">
+      <%= image_tag 'mytest.png', size: '120x48'%>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto navbar-right">
+        <li class="nav-item center"><%= link_to t(:"Top"),  root_path %></li>
+        <li class="nav-item center"><%= link_to t(:"Help"), help_path %></li>
+        <% if logged_in? %>
+          <li><%= link_to t(:"Users"), users_path %></li>
+          <li class="dropdown nav-item">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= t(:"Account") %> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class="nav-item center"><%= link_to t(:"Profile"), current_user %></li>
+              <li class="nav-item center"><%= link_to t(:"Settings"), edit_user_path(current_user) %></li>
+              <li class="divider nav-item center"></li>
+              <li class="nav-item center">
+                <%= link_to t(:"Log out"), logout_path, method: :delete %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li class="dropdown nav-item center">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= t(:"Log in") %><b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li class="nav-item center"><%= link_to t(:"Log in"), root_path %></li>
+              <li class="nav-item center"><%= link_to t(:"Sign up"), new_user_path %></li>
+            </ul>
+          </li>
+        <% end %>
+        <li class="dropdown nav-item center">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <%= t(:"Language") %><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="nav-item center"><%= link_to "English", locale_path(locale:"en") %></li>
+            <li class="nav-item center"><%= link_to "日本語", locale_path(locale:"ja") %></li>
+          </ul>
+        </li>
       </ul>
-    </nav>
-    <nav class="sp-nav">
-      <ul class="nav navbar-nav navbar-right">
-        <%= render 'layouts/header_menu_sp' %>
-      </ul>
-    </nav>
-    <div id="hamburger">
-      <span></span>
     </div>
   </div>
 </header>

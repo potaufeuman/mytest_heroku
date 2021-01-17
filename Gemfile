@@ -17,6 +17,7 @@ gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
 gem 'ransack'
 gem 'rails-i18n'
+gem 'pg', '0.20.0'
 
 group :development, :test do
   gem 'hirb'
@@ -49,15 +50,12 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem "selenium-webdriver"
-  gem 'shoulda-matchers',
-    git: 'https://github.com/thoughtbot/shoulda-matchers.git',
-    branch: 'rails-5'
+  # gem 'shoulda-matchers',
+  #   git: 'https://github.com/thoughtbot/shoulda-matchers.git',
+  #   branch: 'rails-5'
 end
 
 group :production do
-  gem 'pg', '0.20.0'
+  # gem 'pg', '0.20.0'
   gem 'fog', '1.42'
 end
-
-# Windows環境ではtzinfo-dataというgemを含める必要があります
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

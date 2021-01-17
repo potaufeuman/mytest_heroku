@@ -34,3 +34,6 @@ app/assets/stylesheets/application.scss
 # アップロードされたテスト画像を無視する
 /public/uploads
 /heroku
+
+# 昔のファイルのバックアップ
+/shelter
