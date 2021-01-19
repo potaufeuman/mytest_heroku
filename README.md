@@ -1,5 +1,5 @@
 「MyTest」について
-<a href="https://mytest-learn-0to1.herokuapp.com/">https://mytest-learn-0to1.herokuapp.com/</a>
+<a href="https://mytest-2021.herokuapp.com/?locale=ja">https://mytest-2021.herokuapp.com/?locale=ja</a>
 
 説明
 このWebアプリケーションは、オンライン上で選択式のテストを作成し、他の人がそのテストを受講できるようにするためのものです。
@@ -13,7 +13,9 @@
 「お試しでログイン」ボタンより、ゲストユーザーとして各種機能をお試しいただけます。
 
 開発環境
-・AWS(Cloud9, S3)
+・Mac
+・Docker
+・AWS(S3)
 ・Ruby on Rails
   (Ruby 2.6.3)
   (Rails 5.1.6)
