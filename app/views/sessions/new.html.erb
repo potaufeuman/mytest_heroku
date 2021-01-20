@@ -5,8 +5,27 @@
     <%= render "users/side_menu", user: @user %>
   </div>
 <% else %>
-  <div class="center white_belt", id="logo_black">
+  <h1 class="center white_belt", id="logo_black">
     Welcome to MyTest!
+  </h1>
+  <!--- Image Slider -->
+  <div id="slides" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#slides" data-slide-to="0" class="active"></li>
+      <li data-target="#slides" data-slide-to="1"></li>
+      <li data-target="#slides" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag 'study.jpg' %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag 'testlist_slim.jpg' %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag 'create_question.jpg' %>
+      </div>
+    </div>
   </div>
   <div class="row">
     <aside class="col-md-6 white">
