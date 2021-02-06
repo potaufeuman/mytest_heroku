@@ -17,7 +17,7 @@
 ・Docker
 ・AWS(S3)
 ・Ruby on Rails
-  (Ruby 2.6.3)
+  (Ruby 2.5.8)
   (Rails 5.1.6)
 ・postgreSQL
 ・Bootstrap
